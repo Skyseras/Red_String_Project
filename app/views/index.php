@@ -281,6 +281,142 @@
 			</div>
 		</div>
 	</section>
+	<section class="ftco-section">
+		<div class="container-xl">
+			<div class="row justify-content-center">
+				<div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+					<span class="subheading">CATÉGORIES ImmoMaroc</span>
+					<h2 class="mb-4">Explorez nos catégories &amp; lieux</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-10">
+					<div class="row g-1 mb-1">
+						<div class="col-md-3 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+							<a href="#" class="services">
+								<div class="icon"><span class="flaticon-architect"></span></div>
+								<div class="text">
+									<h2>Terrain</h2>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+							<a href="#" class="services">
+								<div class="icon"><span class="flaticon-house"></span></div>
+								<div class="text">
+									<h2>Résidentiel</h2>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+							<a href="#" class="services">
+								<div class="icon"><span class="flaticon-apartment"></span></div>
+								<div class="text">
+									<h2>Commercial</h2>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+							<a href="#" class="services">
+								<div class="icon"><span class="flaticon-factory"></span></div>
+								<div class="text">
+									<h2>Industriel</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+							<ul class="places-list">
+								<li>
+									<a href="#">
+										New York
+										<span>200 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										London
+										<span>100 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Chicago
+										<span>120 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Illinois
+										<span>300 Properties</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+							<ul class="places-list">
+								<li>
+									<a href="#">
+										California
+										<span>100 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Tennessee
+										<span>200 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Texas
+										<span>200 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										North Carolina
+										<span>200 Properties</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-4" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+							<ul class="places-list">
+								<li>
+									<a href="#">
+										Florida
+										<span>422 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Charlotte
+										<span>200 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Orlando
+										<span>200 Properties</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Atlanta
+										<span>200 Properties</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/glightbox.min.js%2baos.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.Ed1LceD4Zh.js"></script>
