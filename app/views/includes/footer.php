@@ -1,3 +1,33 @@
+<section class="ftco-gallery">
+    <div class="container-xl-fluid">
+        <div class="row g-0">
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-1.jpg.pagespeed.ic.9jZ_3stca-.jpg)">
+                </span>
+            </div>
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-2.jpg.pagespeed.ic.Vrm7wAeKSP.jpg)">
+                </span>
+            </div>
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-3.jpg.pagespeed.ic.HE_f8jMi4y.jpg)">
+                </span>
+            </div>
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-4.jpg.pagespeed.ic.Uhg50LeGJz.jpg)">
+                </span>
+            </div>
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-5.jpg.pagespeed.ic.7UNadXe8BU.jpg)">
+                </span>
+            </div>
+            <div class="col-md-2" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <span class="gallery-wrap img d-flex align-items-center justify-content-center" style="background-image:url(<?php echo URLROOT; ?>/public/img/xgallery-6.jpg.pagespeed.ic.XYzQpGP1f6.jpg)">
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="ftco-footer">
     <div class="container-xl">
         <div class="row mb-5 pb-5 justify-content-between">
@@ -5,7 +35,7 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo d-flex">
                         <a class="navbar-brand align-items-center" href="index-2.html" style="width: 65%;">
-                            <img src="images/Logo_IM_L_W.png" alt="logo" class="img-fluid">
+                            <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L_W.png" alt="logo" class="img-fluid">
                         </a>
                     </h2>
                     <ul class="ftco-footer-social list-unstyled mt-2">
