@@ -30,19 +30,19 @@
 </div>
 <nav class="navbar navbar-expand-lg  ftco-navbar-light">
     <div class="container-xl">
-        <a class="navbar-brand align-items-center" href="index.php" style="width: 20%;">
-            <img src="images/Logo_IM_L_W.png" alt="logo" class="img-fluid">
+        <a class="navbar-brand align-items-center" href="<?php echo URLROOT; ?>" style="width: 20%;">
+            <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L_W.png" alt="logo" class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="index.php">ACCUEIL</a></li>
-                <li class="nav-item"><a class="nav-link" href="properties.html">PROPRIÉTÉS</a></li>
-                <li class="nav-item"><a class="nav-link" href="agents.html">AGENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">BLOG</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>">ACCUEIL</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/properties">PROPRIÉTÉS</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">AGENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
             </ul>
             <p class="mb-0"><a href="#" class="btn btn-primary rounded">Soumettre une propriété</a></p>
         </div>
