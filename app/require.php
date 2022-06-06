@@ -8,4 +8,3 @@ require_once 'config/config.php';
 
 //Instantiate core class
 $init = new Core();
-$_GET['url'];

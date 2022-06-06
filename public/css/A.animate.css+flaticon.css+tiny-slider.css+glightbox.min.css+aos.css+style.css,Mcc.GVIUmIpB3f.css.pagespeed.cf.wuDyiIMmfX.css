@@ -6820,6 +6820,16 @@ textarea.form-control {
     color: #fff
 }
 
+.s-info {
+    margin-bottom: 5px;
+    color: #fff;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease
+}
+
 .agent:hover .img:after,
 .agent:focus .img:after {
     opacity: .3
