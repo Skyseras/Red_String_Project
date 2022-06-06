@@ -591,7 +591,7 @@ require APPROOT . '/views/includes/head.php';
 							<img src="<?php echo URLROOT; ?>/public/img/ximage_2.jpg.pagespeed.ic.mQGyn1P_Li.jpg" class="img-fluid" alt="Colorlib Template">
 						</div>
 						<div class="desc">
-							<p class="h-info"><span class="position">Vous êtes une agence immobilière et voulez promouvoir vos annonces ?</span></p>
+							<p class="s-info"><span class="position">Vous êtes une agence immobilière et voulez promouvoir vos biens?</span></p>
 							<h3><a href="properties.html">AGENCE IMMOBILIÈRE</a></h3>
 							<div class="col-md-12 d-flex align-items-center">
 								<p class="mb-0"><a href="#" class="btn btn-black py-3 px-4">Inscrivez-vous</a></p>
@@ -605,7 +605,7 @@ require APPROOT . '/views/includes/head.php';
 							<img src="<?php echo URLROOT; ?>/public/img/LE7RC3l5EeY.jpg" class="img-fluid" alt="Colorlib Template">
 						</div>
 						<div class="desc">
-							<p class="h-info"><span class="position">Vous êtes un particulier et voulez vendre ou louer votre bien ?</span></p>
+							<p class="s-info"><span class="position">Vous êtes un particulier et voulez vendre ou louer votre bien?</span></p>
 							<h3><a href="properties.html">PARTICULIER</a></h3>
 							<div class="col-md-12 d-flex align-items-center">
 								<p class="mb-0"><a href="#" class="btn btn-black py-3 px-4">Déposez une annonce</a></p>

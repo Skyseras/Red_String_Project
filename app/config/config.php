@@ -7,6 +7,6 @@ define('DB_NAME', 'immomaroc'); //Add your DB Name
 //APPROOT
 define('APPROOT', dirname(dirname(__FILE__)));
 //URLROOT (Dynamic links)
-define('URLROOT', 'http://immomaroc.ma');
+define('URLROOT', 'http://localhost/red_string_project');
 //Sitename
 define('SITENAME', 'ImmoMaroc');
