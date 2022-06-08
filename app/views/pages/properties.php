@@ -6,12 +6,12 @@ require APPROOT . '/views/includes/head.php';
     <?php
     require APPROOT . '/views/includes/header.php';
     ?>
-    <section class="hero-wrap hero-wrap-2" style="background-image:url(images/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
+    <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 pt-5 text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>PROPRIÉTÉS <i class="fa fa-chevron-right"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="<?php echo URLROOT; ?>">Home <i class="fa fa-chevron-right"></i></a></span> <span>PROPRIÉTÉS <i class="fa fa-chevron-right"></i></span></p>
                     <h1 class="mb-0 bread">Propriétés</h1>
                 </div>
             </div>
@@ -190,13 +190,13 @@ require APPROOT . '/views/includes/head.php';
             <div class="row">
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
                             <p class="price"><span class="orig-price">Dhs 300,000</span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 2 semaines</span>
@@ -213,13 +213,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/work-2.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
                             <p class="price"><span class="old-price">9,500</span><span class="orig-price">Dhs 3,050<small> / mois</small></span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 1 semaines</span>
@@ -236,13 +236,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
                             <p class="price"><span class="orig-price">Dhs 500,000</span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 2 semaines</span>
@@ -259,13 +259,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/work-2.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
                             <p class="price"><span class="old-price">16,000</span><span class="orig-price">Dhs 5,200<small> / mois</small></span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 3 semaines</span>
@@ -282,13 +282,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
                             <p class="price"><span class="orig-price">Dhs 300,000</span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 2 semaines</span>
@@ -305,13 +305,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/work-2.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
                             <p class="price"><span class="old-price">9,500</span><span class="orig-price">Dhs 3,050<small> / mois</small></span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 1 semaines</span>
@@ -328,13 +328,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
                             <p class="price"><span class="orig-price">Dhs 500,000</span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 2 semaines</span>
@@ -351,13 +351,13 @@ require APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                     <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(images/work-2.jpg)">
+                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
                             <p class="price"><span class="old-price">16,000</span><span class="orig-price">Dhs 5,200<small> / mois</small></span></p>
                         </a>
                         <div class="text">
                             <div class="list-team d-flex align-items-center mb-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                 </div>
                                 <span class="text-right">Il y a 3 semaines</span>

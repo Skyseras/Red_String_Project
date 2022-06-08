@@ -49,10 +49,10 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Offres</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Propriétés</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Agents</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Emplacements</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Assistance Clients</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/properties"><span class="fa fa-chevron-right mr-2"></span>Propriétés</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/agents"><span class="fa fa-chevron-right mr-2"></span>Agents</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/about"><span class="fa fa-chevron-right mr-2"></span>Emplacements</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/contact"><span class="fa fa-chevron-right mr-2"></span>Assistance Clients</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,10 +60,10 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Entreprise</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>À propos de nous</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contactez-nous</a></li>
+                        <li><a href="<?php echo URLROOT; ?>"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/about"><span class="fa fa-chevron-right mr-2"></span>À propos de nous</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/blog"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/contact"><span class="fa fa-chevron-right mr-2"></span>Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>
@@ -105,15 +105,16 @@
         </div>
     </div>
 </footer>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/tiny-slider.js"></script>
-<script src="js/glightbox.min.js%2baos.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.Ed1LceD4Zh.js"></script>
+<script src="<?php echo URLROOT; ?>/public/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URLROOT; ?>/public/js/tiny-slider.js"></script>
+<script src="<?php echo URLROOT; ?>/public/js/glightbox.min.js%2baos.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.Ed1LceD4Zh.js"></script>
 <script>
     eval(mod_pagespeed_rdWE5e7ZHS);
 </script>
 <script>
     eval(mod_pagespeed_TbXghfTMVh);
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
 <script>
     eval(mod_pagespeed_Jq3FPUXGcI);
 </script>
