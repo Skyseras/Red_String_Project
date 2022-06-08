@@ -17,10 +17,6 @@ class Pages extends Controller
     {
         $this->view('pages/agents');
     }
-    public function blog()
-    {
-        $this->view('pages/blog');
-    }
     public function contact()
     {
         $this->view('pages/contact');
