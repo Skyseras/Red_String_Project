@@ -26,7 +26,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">16 Propriétés</span></p>
               <h3><a href="properties.html">Mike Bochs</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -43,7 +43,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-2.jpg.pagespeed.ic.fXsip8GMni.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">29 Propriétés</span></p>
               <h3><a href="properties.html">Mike Bochs</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -60,7 +60,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-3.jpg.pagespeed.ic.bI992H6H3o.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">78 Propriétés</span></p>
               <h3><a href="properties.html">Jessica Moore</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -77,7 +77,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-4.jpg.pagespeed.ic.pE7NVMmqxW.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">36 Propriétés</span></p>
               <h3><a href="properties.html">Sarah Geronimo</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -94,7 +94,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-5.jpg.pagespeed.ic.Ec2TDde-9P.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">22 Propriétés</span></p>
               <h3><a href="properties.html">Mike Bochs</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -111,7 +111,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/team-6.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">9 Propriétés</span></p>
               <h3><a href="properties.html">Mike Bochs</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -128,7 +128,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-7.jpg.pagespeed.ic.bjrw31pWH6.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">47 Propriétés</span></p>
               <h3><a href="properties.html">Jessica Moore</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
@@ -145,7 +145,7 @@ require APPROOT . '/views/includes/head.php';
               <img src="<?php echo URLROOT; ?>/public/img/xteam-8.jpg.pagespeed.ic.fa3pQ0ozV7.jpg" class="img-fluid" alt="Colorlib Template">
             </div>
             <div class="desc">
-              <p class="h-info"><span class="position">Listing</span> <span class="details">10 Properties</span></p>
+              <p class="h-info"><span class="position">Listing</span> <span class="details">51 Propriétés</span></p>
               <h3><a href="properties.html">Sarah Geronimo</a></h3>
               <ul class="ftco-social">
                 <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
