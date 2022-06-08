@@ -40,9 +40,9 @@
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>">ACCUEIL</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/properties">PROPRIÉTÉS</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">AGENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/agents">AGENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/blog">BLOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact">CONTACT</a></li>
             </ul>
             <p class="mb-0"><a href="#" class="btn btn-primary rounded">Soumettre une propriété</a></p>
         </div>
