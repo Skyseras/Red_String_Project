@@ -10,5 +10,5 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&amp;display=swap">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
-	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/A.animate.css%2bflaticon.css%2btiny-slider.css%2bglightbox.min.css%2baos.css%2bstyle.css%2cMcc.GVIUmIpB3f.css.pagespeed.cf.wuDyiIMmfX.css" />
+	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/style.css" />
 </head>
