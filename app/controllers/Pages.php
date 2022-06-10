@@ -21,4 +21,12 @@ class Pages extends Controller
     {
         $this->view('pages/contact');
     }
+    public function login()
+    {
+        $this->view('pages/login');
+    }
+    public function register()
+    {
+        $this->view('pages/register');
+    }
 }

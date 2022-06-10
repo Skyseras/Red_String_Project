@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid px-0 py-5 bg-darken">
+    <div class="container-fluid px-0 py-3 bg-darken">
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-12 text-center">
