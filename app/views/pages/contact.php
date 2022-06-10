@@ -25,13 +25,13 @@ require APPROOT . '/views/includes/head.php';
             <div class="row g-0">
               <div class="col-lg-6">
                 <div class="contact-wrap w-100 p-md-5 p-4">
-                  <h3>Contact us</h3>
-                  <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                  <h3>Contactez-nous</h3>
+                  <p class="mb-4">Nous sommes ouverts à toute suggestion ou simplement pour discuter</p>
                   <div class="row mb-4">
                     <div class="col-md-4">
                       <div class="dbox w-100 d-flex align-items-start">
                         <div class="text">
-                          <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                          <p><span>ADRESSE:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
                         </div>
                       </div>
                     </div>
@@ -45,7 +45,7 @@ require APPROOT . '/views/includes/head.php';
                     <div class="col-md-4">
                       <div class="dbox w-100 d-flex align-items-start">
                         <div class="text">
-                          <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                          <p><span>Téléphone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
                         </div>
                       </div>
                     </div>
@@ -81,12 +81,11 @@ require APPROOT . '/views/includes/head.php';
                     </div>
                   </form>
                   <div class="w-100 social-media mt-5">
-                    <h3>Follow us here</h3>
+                    <h3>Suivez-nous sur les réseaux sociaux</h3>
                     <p>
                       <a href="#">Facebook</a>
                       <a href="#">Twitter</a>
                       <a href="#">Instagram</a>
-                      <a href="#">Dribbble</a>
                     </p>
                   </div>
                 </div>
