@@ -9,7 +9,7 @@ require APPROOT . '/views/includes/head.php';
   <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="row no-gutters slider-text align-items-center justify-content-center" style="height:80vh;">
         <div class="col-md-9 pt-5 text-center">
           <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Our Agents <i class="fa fa-chevron-right"></i></span></p>
           <h1 class="mb-0 bread">Our Agents</h1>
@@ -17,7 +17,7 @@ require APPROOT . '/views/includes/head.php';
       </div>
     </div>
   </section>
-  <section class="ftco-section ftco-agent">
+  <section class="ftco-section ftco-agent" style="margin-top: -14em;">
     <div class="container-xl">
       <div class="row">
         <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
