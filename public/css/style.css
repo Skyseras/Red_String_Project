@@ -5666,7 +5666,7 @@ h5,
 }
 
 .hero-wrap {
-    height: 550px;
+    height: 80%;
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
@@ -5686,7 +5686,7 @@ h5,
 }
 
 .hero-wrap .slider-text {
-    height: 550px;
+    height: 80%;
     color: rgba(255, 255, 255, .8);
     z-index: 3
 }
@@ -6887,7 +6887,7 @@ textarea.form-control {
 .ftco-section {
     padding: 7em 0;
     position: relative;
-    width: 100%
+    width: 100%;
 }
 
 @media (max-width:575.98px) {

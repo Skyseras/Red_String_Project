@@ -9,8 +9,8 @@ require APPROOT . '/views/includes/head.php';
     <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 pt-5 text-center">
+            <div class="row no-gutters slider-text align-items-center justify-content-center" style="height:80vh;">
+                <div class="col-md-9 text-center">
                     <p class="breadcrumbs"><span class="mr-2"><a href="<?php echo URLROOT; ?>">Home <i class="fa fa-chevron-right"></i></a></span> <span>PROPRIÉTÉS <i class="fa fa-chevron-right"></i></span></p>
                     <h1 class="mb-0 bread">Propriétés</h1>
                 </div>
