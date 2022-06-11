@@ -76,7 +76,7 @@ class Usercontroller extends Controller
                 $data['confirmPasswordError'] = 'SVP ajouter un password.';
             } else {
                 if ($data['password'] != $data['confirmPassword']) {
-                    $data['confirmPasswordError'] = 'Passwords ne se ressemblent pas, ressayez encore!';
+                    $data['confirmPasswordError'] = 'Passwords ne se ressemblent pas. Réssayer encore!';
                 }
             }
 
@@ -101,10 +101,9 @@ class Usercontroller extends Controller
     public function login()
     {
         $data = [
-            'title' => 'Login page',
-            'username' => '',
+            'name' => '',
             'password' => '',
-            'usernameError' => '',
+            'nameError' => '',
             'passwordError' => ''
         ];
 
@@ -114,50 +113,50 @@ class Usercontroller extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'username' => trim($_POST['username']),
+                'name' => trim($_POST['name']),
                 'password' => trim($_POST['password']),
-                'usernameError' => '',
+                'nameError' => '',
                 'passwordError' => '',
             ];
-            //Validate username
-            if (empty($data['username'])) {
-                $data['usernameError'] = 'Please enter a username.';
+            //Validate name
+            if (empty($data['name'])) {
+                $data['nameError'] = 'SVP entrer le Nom.';
             }
 
             //Validate password
             if (empty($data['password'])) {
-                $data['passwordError'] = 'Please enter a password.';
+                $data['passwordError'] = 'SVP entrer le Password.';
             }
 
             //Check if all errors are empty
-            if (empty($data['usernameError']) && empty($data['passwordError'])) {
-                $loggedInUser = $this->userModel->login($data['username'], $data['password']);
+            if (empty($data['nameError']) && empty($data['passwordError'])) {
+                $loggedInUser = $this->userModel->login($data['name'], $data['password']);
 
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
+                    $data['passwordError'] = 'Password ou Nom est incorrecte. Réssayer encore!';
 
-                    $this->view('users/login', $data);
+                    $this->view('pages/login', $data);
                 }
             }
         } else {
             $data = [
-                'username' => '',
+                'name' => '',
                 'password' => '',
-                'usernameError' => '',
+                'nameError' => '',
                 'passwordError' => ''
             ];
         }
-        $this->view('users/login', $data);
+        $this->view('pages/login', $data);
     }
 
     public function createUserSession($user)
     {
         $_SESSION['user_id'] = $user->id;
-        $_SESSION['username'] = $user->username;
+        $_SESSION['name'] = $user->name;
         $_SESSION['email'] = $user->email;
-        header('location:' . URLROOT . '/pages/home');
+        header('location:' . URLROOT . '/pages/index');
     }
 
     public function logout()

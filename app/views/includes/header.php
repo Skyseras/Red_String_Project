@@ -43,7 +43,11 @@
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/agents">AGENTS</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact">CONTACT</a></li>
             </ul>
-            <p class="mb-0"><a href="#" class="btn btn-primary rounded">Soumettre une propriété</a></p>
+            <?php if (isset($_SESSION['user_id'])) : ?>
+                <p class="mb-0"><a href="<?php echo URLROOT; ?>/usercontroller/logout" class="btn btn-primary rounded">Se déconnecter</a></p>
+            <?php else : ?>
+                <p class="mb-0"><a href="<?php echo URLROOT; ?>/usercontroller/login" class="btn btn-primary rounded">Se connecter</a></p>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
