@@ -60,8 +60,8 @@ require APPROOT . '/views/includes/head.php';
             </div>
         </div>
     </section>
-    <script src="<?php echo URLROOT; ?>/public/js/Signinup/jquery.min.js"></>
-    <script src="<?php echo URLROOT; ?>/public/js/Signinup/popper.js%2bbootstrap.min.js%2bmain.js.pagespeed.jc.iqDpUqoRp9.js"></script>
+    <script src="<?php echo URLROOT; ?>/public/js/Signinup/jquery.js"></script>
+    <script src="<?php echo URLROOT; ?>/public/js/Signinup/popper%2bbootstrap.js"></script>
     <script>
         eval(mod_pagespeed_qBnQ96WPW1);
     </script>

@@ -3,7 +3,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p class="mb-0" style="color: rgba(255,255,255,.5); font-size: 13px;">Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <p class="mb-0" style="color: rgba(255,255,255,.5); font-size: 13px;">Copyright &copy;<script data-cfasync="false" src="<?php echo URLROOT; ?>/public/js/email-decode.js"></script>
                         <script>
                             document.write(new Date().getFullYear());
                         </script> All rights reserved | Powered with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="#" target="_blank" rel="nofollow noopener">ImmoMaroc</a>
@@ -12,9 +12,9 @@
         </div>
     </div>
 </footer>
-<script src="<?php echo URLROOT; ?>/public/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URLROOT; ?>/public/js/bootstrap.js"></script>
 <script src="<?php echo URLROOT; ?>/public/js/tiny-slider.js"></script>
-<script src="<?php echo URLROOT; ?>/public/js/glightbox.min.js%2baos.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.Ed1LceD4Zh.js"></script>
+<script src="<?php echo URLROOT; ?>/public/js/glightbox.js"></script>
 <script>
     eval(mod_pagespeed_rdWE5e7ZHS);
 </script>
