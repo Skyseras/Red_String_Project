@@ -19,33 +19,43 @@ require APPROOT . '/views/includes/head.php';
                                 <div class="w-50">
                                     <p class="social-media d-flex justify-content-end">
                                         <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-                                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a>
                                     </p>
                                 </div>
                             </div>
-                            <form action="#" class="signin-form">
+                            <form action="<?php echo URLROOT; ?>/Usercontroller/register" method="POST" class="signin-form">
                                 <div class="d-flex">
                                     <div class="form-group mb-3 mx-1 w-100">
-                                        <label class="label" for="name">Pseudo Nom</label>
-                                        <input type="text" class="form-control" placeholder="Username" required>
+                                        <label class="label" for="name">Nom</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Username" required>
                                     </div>
                                     <div class="form-group mb-3 mx-1 w-100">
-                                        <label class="label" for="name">Adresse Email</label>
-                                        <input type="email" class="form-control" placeholder="Username" required>
+                                        <label class="label" for="role">Rôle</label>
+                                        <select class="form-control" id="role" name="role" placeholder="Êtes-vous ..">
+                                            <option selected value="">Êtes-vous ..</option>
+                                            <option value="client">Un client</option>
+                                            <option value="particulier">Un particulier</option>
+                                            <option value="promoteur">Un promoteur</option>
+                                            <option value="agence">Une agence immobilière</option>
+                                        </select>
                                     </div>
+                                </div>
+                                <div class="form-group mb-3 mx-1 w-100">
+                                    <label class="label" for="email">Adresse Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Username" required>
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mb-3 mx-1 w-100">
                                         <label class="label" for="password">Mot de passe</label>
-                                        <input type="password" class="form-control" placeholder="Password" required>
+                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                                     </div>
                                     <div class="form-group mb-3 mx-1 w-100">
-                                        <label class="label" for="password">Confirmer mot de passe</label>
-                                        <input type="password" class="form-control" placeholder="Password" required>
+                                        <label class="label" for="confirmPassword">Confirmer mot de passe</label>
+                                        <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmer password" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary submit px-3">Créer un compte</button>
+                                    <button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Créer un compte</button>
                                 </div>
                                 <div class="form-group d-md-flex">
                                     <div class="w-50 text-left">
