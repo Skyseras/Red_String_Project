@@ -155,15 +155,15 @@ class Usercontroller extends Controller
     {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['name'] = $user->name;
-        $_SESSION['email'] = $user->email;
+        $_SESSION['role'] = $user->role;
         header('location:' . URLROOT . '/pages/index');
     }
 
     public function logout()
     {
         unset($_SESSION['user_id']);
-        unset($_SESSION['username']);
-        unset($_SESSION['email']);
-        header('location:' . URLROOT . '/users/login');
+        unset($_SESSION['name']);
+        unset($_SESSION['role']);
+        header('location:' . URLROOT . '/pages/index');
     }
 }
