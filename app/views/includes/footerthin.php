@@ -1,5 +1,5 @@
 <footer class="ftco-footer p-0">
-    <div class="container-fluid px-0 py-4 bg-darken">
+    <div class="container-fluid px-0 py-2 bg-darken">
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-12 text-center">

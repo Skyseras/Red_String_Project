@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&amp;display=swap">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/font-awesome/font-awesome.css">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/ajaxionicons.min.css">
+	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/simple-line-icons/css/simple-line-icons.css">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/sign_in_up.css">
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/style.css">
 </head>

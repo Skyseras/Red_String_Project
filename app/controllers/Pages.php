@@ -29,4 +29,12 @@ class Pages extends Controller
     {
         $this->view('pages/register');
     }
+    public function profile()
+    {
+        $this->view('pages/profile');
+    }
+    public function dashboard()
+    {
+        $this->view('pages/dashboard');
+    }
 }
