@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  ftco-navbar-light" style="top:0;">
+<nav class="navbar navbar-expand-lg  ftco-navbar-light" style="background: #06112a!important; position: relative; top:0;">
     <div class="container-xl">
         <a class="navbar-brand align-items-center" href="<?php echo URLROOT; ?>" style="width: 20%;">
             <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L_W.png" alt="logo" class="img-fluid">

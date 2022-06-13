@@ -8,5 +8,8 @@ define('DB_NAME', 'immomaroc'); //Add your DB Name
 define('APPROOT', dirname(dirname(__FILE__)));
 //URLROOT (Dynamic links)
 define('URLROOT', 'http://localhost/red_string_project');
-//Sitename
+
+define('BASE_REQUEST_URL',preg_replace('#^/red_string_project/dashboard/#i','',parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)));
+define('BASE2_REQUEST_URL',preg_replace('#^/red_string_project/pages/#i','',parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH)));
+
 define('SITENAME', 'ImmoMaroc');
