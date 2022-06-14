@@ -33,11 +33,11 @@ require APPROOT . '/views/includes/head.php';
                             <form action="<?php echo URLROOT; ?>/Usercontroller/login" method="POST" class="signin-form">
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Nom</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Username" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Username">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Mot de passe</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Se connecter</button>

@@ -1,22 +1,20 @@
 <?php
-class Usercontroller extends Controller
+class Admincontroller extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model('User');
+        $this->adminModel = $this->model('Adminmodels');
     }
 
     public function register()
     {
         $data = [
             'name' => '',
-            'role' => '',
             'email' => '',
             'password' => '',
             'confirmPassword' => '',
 
             'nameError' => '',
-            'roleError' => '',
             'emailError' => '',
             'passwordError' => '',
             'confirmPasswordError' => ''
@@ -29,12 +27,10 @@ class Usercontroller extends Controller
 
             $data = [
                 'name' => trim($_POST['name']),
-                'role' => trim($_POST['role']),
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
                 'nameError' => '',
-                'roleError' => '',
                 'emailError' => '',
                 'passwordError' => '',
                 'confirmPasswordError' => ''
@@ -48,19 +44,20 @@ class Usercontroller extends Controller
                 $data['nameError'] = 'SVP ajouter le nom.';
             } elseif (!preg_match($nameValidation, $data['name'])) {
                 $data['nameError'] = 'Le nom doit contenir des chiffres et des lettres seulement.';
+            } else {
+                //Check if name exists.
+                if ($this->adminModel->findAdminByName($data['name'])) {
+                    $data['nameError'] = 'Ce Nom est dèja inscrit! Choisi un autre nom.';
+                }
             }
 
             //Validate email
             if (empty($data['email'])) {
-                $data['emailError'] = 'SVP ajouter adresse email.';
+                $data['emailError'] = 'Entrez un email valide.';
             } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                $data['emailError'] = 'Ajouter adresse en format correcte.';
-            } else {
-                //Check if email exists.
-                if ($this->userModel->findUserByEmail($data['email'])) {
-                    $data['emailError'] = 'Adress Email dèja inscrite.';
-                }
+                $data['emailError'] = 'Entrez une format valide.';
             }
+            
 
             // Validate password on length, numeric values,
             if (empty($data['password'])) {
@@ -81,21 +78,21 @@ class Usercontroller extends Controller
             }
 
             // Make sure that errors are empty
-            if (empty($data['nameError']) && empty($data['roleError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+            if (empty($data['nameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
 
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-                //Register user from model function
-                if ($this->userModel->register($data)) {
+                //Register admin from model function
+                if ($this->adminModel->register($data)) {
                     //Redirect to the login page
-                    header('location: ' . URLROOT . '/pages/login');
+                    header('location: ' . URLROOT . '/dashboard/login');
                 } else {
                     die('Something went wrong.');
                 }
             }
         }
-        $this->view('pages/register', $data);
+        $this->view('dashboard/register', $data);
     }
 
     public function login()
@@ -130,14 +127,14 @@ class Usercontroller extends Controller
 
             //Check if all errors are empty
             if (empty($data['nameError']) && empty($data['passwordError'])) {
-                $loggedInUser = $this->userModel->login($data['name'], $data['password']);
+                $loggedInAdmin = $this->adminModel->login($data['name'], $data['password']);
 
-                if ($loggedInUser) {
-                    $this->createUserSession($loggedInUser);
+                if ($loggedInAdmin) {
+                    $this->createAdminSession($loggedInAdmin);
                 } else {
                     $data['passwordError'] = 'Password ou Nom est incorrecte. Réssayer encore!';
 
-                    $this->view('pages/login', $data);
+                    $this->view('dashboard/login', $data);
                 }
             }
         } else {
@@ -148,18 +145,18 @@ class Usercontroller extends Controller
                 'passwordError' => ''
             ];
         }
-        $this->view('pages/login', $data);
+        $this->view('dashboard/login', $data);
     }
 
-    public function createUserSession($user)
+    public function createAdminSession($admin)
     {
-        $_SESSION['role'] = $user->role;
-        header('location:' . URLROOT . '/pages/index');
+        $_SESSION['name'] = $admin->name;
+        header('location:' . URLROOT . '/pages/dashboard');
     }
 
     public function logout()
     {
-        unset($_SESSION['role']);
+        unset($_SESSION['name']);
         header('location:' . URLROOT . '/pages/index');
     }
 }

@@ -20,7 +20,7 @@
                         <p class="mb-1 mt-3">Allen Moreno</p>
                         <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                     </div>
-                    <a class="dropdown-item" href="<?php echo URLROOT; ?>/usercontroller/logout"><i class="dropdown-item-icon icon-power text-primary"></i>Se déconnecter</a>
+                    <a class="dropdown-item" href="<?php echo URLROOT; ?>/Admincontroller/logout"><i class="dropdown-item-icon icon-power text-primary"></i>Se déconnecter</a>
                 </div>
             </li>
         </ul>
