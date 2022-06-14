@@ -35,7 +35,11 @@ class Pages extends Controller
     }
     public function dashboard()
     {
-        $this->view('pages/dashboard');
+        if (adminIn()) {
+            $this->view('pages/dashboard');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
     public function E404()
     {

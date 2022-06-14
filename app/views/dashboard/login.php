@@ -13,15 +13,21 @@ require APPROOT . '/views/includes/dashhead.php';
                 <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L.png">
               </div>
               <h4>Authentification</h4>
-              <form class="pt-3">
+              <form action="<?php echo URLROOT; ?>/Admincontroller/login" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <span class="invalidFeedback">
+                    <?php echo $data['nameError']; ?>
+                  </span>
+                  <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <span class="invalidFeedback">
+                    <?php echo $data['passwordError']; ?>
+                  </span>
+                  <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#">SE CONNECTER</a>
+                  <button type="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SE CONNECTER</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">

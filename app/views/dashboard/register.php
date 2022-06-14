@@ -13,21 +13,21 @@ require APPROOT . '/views/includes/dashhead.php';
                 <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L.png">
               </div>
               <h4>Création de compte Administrateur</h4>
-              <form class="pt-3">
+              <form action="<?php echo URLROOT; ?>/Admincontroller/register" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nom">
+                  <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Confimer Password">
+                  <input type="password" class="form-control form-control-lg" name="confirmPassword" placeholder="Confimer Password" required>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#">CREER MON COMPTE</a>
+                  <button type="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">CREER MON COMPTE</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light"> Vous avez déja un compte? <a href="<?php echo URLROOT; ?>/dashboard/login" class="text-primary">Login</a>
                 </div>
