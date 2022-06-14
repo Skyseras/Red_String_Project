@@ -60,7 +60,7 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Entreprise</h2>
                     <ul class="list-unstyled">
-                        <li><a href="<?php echo URLROOT; ?>"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="<?php echo URLROOT; ?>/pages/dashboard"><span class="fa fa-chevron-right mr-2"></span>Espace Admin</a></li>
                         <li><a href="<?php echo URLROOT; ?>/pages/about"><span class="fa fa-chevron-right mr-2"></span>À propos de nous</a></li>
                         <li><a href="<?php echo URLROOT; ?>/pages/blog"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
                         <li><a href="<?php echo URLROOT; ?>/pages/contact"><span class="fa fa-chevron-right mr-2"></span>Contactez-nous</a></li>
