@@ -37,4 +37,8 @@ class Pages extends Controller
     {
         $this->view('pages/dashboard');
     }
+    public function E404()
+    {
+        $this->view('pages/404');
+    }
 }
