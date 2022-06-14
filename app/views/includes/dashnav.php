@@ -13,12 +13,12 @@
             </form>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
+                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="Profile image"> <span class="font-weight-normal"> <?php echo $_SESSION['name']?> </span></a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
                         <img style="width: 40px;" class="img-md rounded-circle" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="Profile image">
-                        <p class="mb-1 mt-3">Allen Moreno</p>
-                        <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                        <p class="mb-1 mt-3"><?php echo $_SESSION['name']?></p>
+                        <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION['email']?></p>
                     </div>
                     <a class="dropdown-item" href="<?php echo URLROOT; ?>/Admincontroller/logout"><i class="dropdown-item-icon icon-power text-primary"></i>Se déconnecter</a>
                 </div>
@@ -40,7 +40,7 @@
                         <div class="dot-indicator bg-success"></div>
                     </div>
                     <div class="text-wrapper">
-                        <p class="profile-name">Allen Moreno</p>
+                        <p class="profile-name"><?php echo $_SESSION['name']?></p>
                         <p class="designation">Administrator</p>
                     </div>
                 </a>
