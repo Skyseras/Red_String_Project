@@ -7,11 +7,8 @@ require APPROOT . '/views/includes/dashhead.php';
         <?php
         require APPROOT . '/views/includes/dashnav.php';
         ?>
-
         <div class="main-panel">
             <div class="content-wrapper p-2">
-                <!-- Quick Action Toolbar Ends-->
-
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
