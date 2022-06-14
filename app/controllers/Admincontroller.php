@@ -151,12 +151,14 @@ class Admincontroller extends Controller
     public function createAdminSession($admin)
     {
         $_SESSION['name'] = $admin->name;
+        $_SESSION['email'] = $admin->email;
         header('location:' . URLROOT . '/pages/dashboard');
     }
 
     public function logout()
     {
         unset($_SESSION['name']);
+        unset($_SESSION['email']);
         header('location:' . URLROOT . '/pages/index');
     }
 }

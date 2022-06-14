@@ -3,7 +3,11 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        $this->view('pages/dashboard');
+        if (adminIn()) {
+            $this->view('pages/dashboard');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
     public function login()
     {
@@ -15,18 +19,34 @@ class Dashboard extends Controller
     }
     public function clients()
     {
-        $this->view('dashboard/clients');
+        if (adminIn()) {
+            $this->view('dashboard/clients');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
     public function particuliers()
     {
-        $this->view('dashboard/particuliers');
+        if (adminIn()) {
+            $this->view('dashboard/particuliers');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
     public function promoteurs()
     {
-        $this->view('dashboard/promoteurs');
+        if (adminIn()) {
+            $this->view('dashboard/promoteurs');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
     public function agences()
     {
-        $this->view('dashboard/agences');
+        if (adminIn()) {
+            $this->view('dashboard/agences');
+        }else {
+            $this->view('dashboard/login');
+        }
     }
 }

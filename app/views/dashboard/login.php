@@ -15,15 +15,9 @@ require APPROOT . '/views/includes/dashhead.php';
               <h4>Authentification</h4>
               <form action="<?php echo URLROOT; ?>/Admincontroller/login" method="POST" class="pt-3">
                 <div class="form-group">
-                  <span class="invalidFeedback">
-                    <?php echo $data['nameError']; ?>
-                  </span>
                   <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
                 </div>
                 <div class="form-group">
-                  <span class="invalidFeedback">
-                    <?php echo $data['passwordError']; ?>
-                  </span>
                   <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
                 </div>
                 <div class="mt-3">

@@ -3,6 +3,126 @@ require APPROOT . '/views/includes/dashhead.php';
 ?>
 
 <body>
+    <!-- Modal add-->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Client Form</h5>
+                </div>
+                <div class="px-4 py-3" id="form">
+                    <form action="<?php echo URLROOT; ?>/Studentcontroller/add" method="POST" enctype="multipart/form-data" class="forms-sample">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputName1">Nom</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputName1">Prénom</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputEmail3">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputPassword4">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="gender" class="form-label">Sexe</label>
+                                <select class="small-size form-control" id="gender" name="gender" placeholder="Select Gender">
+                                    <option selected value="">Choisir le Sexe</option>
+                                    <option value="Male">Homme</option>
+                                    <option value="Female">Femme</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Ajouter la photo de profil</label>
+                                <input type="file" name="img[]" class="file-upload-default">
+                                <div class=" input-group col-xs-12">
+                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Choisir Image">
+                                    <div class="file-upload-browse">
+                                        <button class=" btn btn-primary" type="button">Ajouter</button>
+                                    </div>
+                                </div>
+<!--                                 
+                                <div class="file-field">
+                                    <div class="file-upload-browse btn btn-primary">
+                                        <span>Choose file</span>
+                                        <input type="file">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Upload your file">
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleInputCity1">City</label>
+                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleTextarea1">Adresse</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+                    </form>
+                    <!-- <form  class="text-muted row g-3 needs-validation">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="small-size form-control" name="name" id="name" placeholder="Enter name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="small-size form-control" id="gender" name="gender" placeholder="Select Gender">
+                                <option selected value="">Select Your Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="class" class="form-label">Class</label>
+                            <select class="small-size form-control" id="class" name="class" placeholder="Select your Class">
+                                <option selected value="">Select Your Class</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="parent" class="form-label">Parent</label>
+                            <input type="text" class="small-size form-control" name="parent" id="parent" placeholder="Enter parent" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="small-size form-control" name="address" id="address" placeholder="Enter address">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="small-size form-control" name="email" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="birthday" class="form-label">Birthday</label>
+                            <input type="date" class="small-size form-control" name="birthday" id="birthday" placeholder="Enter birthday" required>
+                        </div>
+                        <div class="col-12 mt-3 modal-footer text-center">
+                            <button class="btn btn-primary" name="save" type="submit">Save</button>
+                        </div>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-scroller">
         <?php
         require APPROOT . '/views/includes/dashnav.php';
@@ -30,7 +150,7 @@ require APPROOT . '/views/includes/dashhead.php';
                                                     <h2>Listes des clients</h2>
                                                 </div>
                                                 <div class="col-md-2 col-xl-2 report-inner-card">
-                                                    <button type="button" class="inner-card-icon btn btn-inverse-success btn-icon">
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="inner-card-icon btn btn-inverse-success btn-icon">
                                                         <i class="icon-plus"></i>
                                                     </button>
                                                 </div>
@@ -146,61 +266,14 @@ require APPROOT . '/views/includes/dashhead.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Basic form elements</h4>
-                            <p class="card-description"> Basic form elements </p>
-                            <form class="forms-sample">
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Name</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleSelectGender">Gender</label>
-                                    <select class="form-control" id="exampleSelectGender">
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>File upload</label>
-                                    <input type="file" name="img[]" class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputCity1">City</label>
-                                    <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleTextarea1">Textarea</label>
-                                    <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button class="btn btn-light">Cancel</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <script src="<?php echo URLROOT; ?>/js/vendor.bundle.base.js"></script>
     <script src="<?php echo URLROOT; ?>/js/off-canvas.js"></script>
     <script src="<?php echo URLROOT; ?>/js/misc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 
 </html>
