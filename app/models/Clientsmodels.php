@@ -10,16 +10,19 @@ class Clientsmodels
 
     public function add($data)
     {
-        $this->db->query('INSERT INTO students (name, gender, class, parent, address, email, birthday) VALUES(:name, :gender, :class, :parent, :address, :email, :birthday)');
+        $this->db->query('INSERT INTO users (lname, fname, role, email, password, gender, pdp, city, phone, address) VALUES(:lname, :fname, :role, :email, :password, :gender, :pdp, :city, :phone, :address)');
 
         //Bind values
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':gender', $data['gender']);
-        $this->db->bind(':class', $data['class']);
-        $this->db->bind(':parent', $data['parent']);
-        $this->db->bind(':address', $data['address']);
+        $this->db->bind(':lname', $data['lname']);
+        $this->db->bind(':fname', $data['fname']);
+        $this->db->bind(':role', $data['role']);
         $this->db->bind(':email', $data['email']);
-        $this->db->bind(':birthday', $data['birthday']);
+        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':pdp', $data['pdp']);
+        $this->db->bind(':city', $data['city']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':address', $data['address']);
 
         //Execute function
         if ($this->db->execute()) {
@@ -30,9 +33,54 @@ class Clientsmodels
     }
 
 
+    public function edit($data)
+    {
+        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,gender=:gender,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:id");
+
+        //Bind values
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':lname', $data['lname']);
+        $this->db->bind(':fname', $data['fname']);
+        $this->db->bind(':role', $data['role']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':pdp', $data['pdp']);
+        $this->db->bind(':city', $data['city']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':address', $data['address']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    public function delete($data)
+    {
+        $this->db->query('DELETE FROM users WHERE id=:id');
+
+        $this->db->bind(':id', $data['id']);
+
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
+    
     public function get()
     {
-        $this->db->query('SELECT * FROM students order by id DESC');
+        $this->db->query('SELECT * FROM users order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }
@@ -62,44 +110,6 @@ class Clientsmodels
         $this->db->query('SELECT count(*) AS students_count, class AS class_name FROM students GROUP by class;');
         $this->db->execute();
         return $this->db->resultSet();
-    }
-
-    public function edit($data)
-    {
-
-        $this->db->query("UPDATE students SET name=:name,gender=:gender,class=:class,parent=:parent,address=:address,email=:email,birthday=:birthday  where id =:id");
-
-        //Bind values
-        $this->db->bind(':id', $data['id']);
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':gender', $data['gender']);
-        $this->db->bind(':class', $data['class']);
-        $this->db->bind(':parent', $data['parent']);
-        $this->db->bind(':address', $data['address']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':birthday', $data['birthday']);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-
-    public function delete($data)
-    {
-        $this->db->query('DELETE FROM students WHERE id=:id');
-
-        $this->db->bind(':id', $data['id']);
-
-        //Execute function
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
 }
