@@ -4,121 +4,160 @@ require APPROOT . '/views/includes/dashhead.php';
 
 <body>
     <!-- Modal add-->
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add New Client Form</h5>
+                    <h5 class="modal-title" id="addModaltitle">Ajouter Nouveau Client</h5>
                 </div>
                 <div class="px-4 py-3" id="form">
-                    <form action="<?php echo URLROOT; ?>/Studentcontroller/add" method="POST" enctype="multipart/form-data" class="forms-sample">
+                    <form action="<?php echo URLROOT; ?>/Clientscontroller/add" method="POST" enctype="multipart/form-data" class="forms-sample">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="exampleInputName1">Nom</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                                <label for="Nom">Nom</label>
+                                <input name="lname" type="text" class="form-control" id="lname" placeholder="Nom">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="exampleInputName1">Prénom</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                                <label for="Prénom">Prénom</label>
+                                <input name="fname" type="text" class="form-control" id="fname" placeholder="Prénom">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="exampleInputEmail3">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                <label for="Email">Email</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="exampleInputPassword4">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                                <label for="Password">Password</label>
+                                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="gender" class="form-label">Sexe</label>
-                                <select class="small-size form-control" id="gender" name="gender" placeholder="Select Gender">
+                                <label for="Sexe" class="form-label">Sexe</label>
+                                <select name="gender" class="small-size form-control" id="gender" placeholder="Select Gender">
                                     <option selected value="">Choisir le Sexe</option>
                                     <option value="Male">Homme</option>
                                     <option value="Female">Femme</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Ajouter la photo de profil</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class=" input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Choisir Image">
-                                    <div class="file-upload-browse">
-                                        <button class=" btn btn-primary" type="button">Ajouter</button>
-                                    </div>
-                                </div>
-<!--                                 
-                                <div class="file-field">
-                                    <div class="file-upload-browse btn btn-primary">
-                                        <span>Choose file</span>
-                                        <input type="file">
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Upload your file">
-                                    </div>
-                                </div> -->
+                                <label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
+                                <input name="pdp" type="file" class="form-control" id="pdp" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="exampleInputCity1">City</label>
-                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                                <label for="Ville">Ville</label>
+                                <input name="ville" type="text" class="form-control" id="ville" placeholder="Ville">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="exampleTextarea1">Adresse</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
+                                <label for="Numéro">Numéro de Téléphone</label>
+                                <input name="number" type="text" class="form-control" id="number" placeholder="Numéro de Téléphone">
                             </div>
                         </div>
-                        <button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
-                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="Adresse">Adresse</label>
+                                <textarea name="address" class="form-control" id="address" rows="1"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+                            </div>
+                        </div>
                     </form>
-                    <!-- <form  class="text-muted row g-3 needs-validation">
-                        <div class="col-md-6">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="small-size form-control" name="name" id="name" placeholder="Enter name" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal delete-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title text-danger" id="deleteModaltitle">Alerte! Suppression du Client</h5>
+                </div>
+                <div class="px-4 py-3">
+                    Êtes-vous sûr de vouloir supprimer?<br>
+                </div>
+                <form action="<?php echo URLROOT; ?>/Clientscontroller/delete" method="POST">
+                    <input type="text" style="display: none;" name="id" class="id">
+                    <div class="px-4 py-3">
+                        <button type="submit" name="save" class="btn btn-danger mr-2">Oui, supprimer ce client.</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal edit -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModaltitle">Modifier Ce Client</h5>
+                </div>
+                <div class="px-4 py-3" id="form">
+                    <form action="<?php echo URLROOT; ?>/Clientscontroller/edit" method="POST" enctype="multipart/form-data" class="forms-sample">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Nom">Nom</label>
+                                <input name="lname" type="text" class="form-control" id="lname" placeholder="Nom">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Prénom">Prénom</label>
+                                <input name="fname" type="text" class="form-control" id="fname" placeholder="Prénom">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="gender" class="form-label">Gender</label>
-                            <select class="small-size form-control" id="gender" name="gender" placeholder="Select Gender">
-                                <option selected value="">Select Your Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Email">Email</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Password">Password</label>
+                                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="class" class="form-label">Class</label>
-                            <select class="small-size form-control" id="class" name="class" placeholder="Select your Class">
-                                <option selected value="">Select Your Class</option>
-                                <option value="Class 1">Class 1</option>
-                                <option value="Class 2">Class 2</option>
-                                <option value="Class 3">Class 3</option>
-                                <option value="Class 4">Class 4</option>
-                                <option value="Class 5">Class 5</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Sexe" class="form-label">Sexe</label>
+                                <select name="gender" class="small-size form-control" id="gender" placeholder="Select Gender">
+                                    <option selected value="">Choisir le Sexe</option>
+                                    <option value="Male">Homme</option>
+                                    <option value="Female">Femme</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
+                                <input name="pdp" type="file" class="form-control" id="pdp" />
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="parent" class="form-label">Parent</label>
-                            <input type="text" class="small-size form-control" name="parent" id="parent" placeholder="Enter parent" required>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Ville">Ville</label>
+                                <input name="ville" type="text" class="form-control" id="ville" placeholder="Ville">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Numéro">Numéro de Téléphone</label>
+                                <input name="number" type="text" class="form-control" id="number" placeholder="Numéro de Téléphone">
+                            </div>
                         </div>
-                        <div class="col-md-12">
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" class="small-size form-control" name="address" id="address" placeholder="Enter address">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="Adresse">Adresse</label>
+                                <textarea name="address" class="form-control" id="address" rows="1"></textarea>
+                            </div>
                         </div>
-                        <div class="col-md-12">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="small-size form-control" name="email" id="email" placeholder="Enter email" required>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+                            </div>
                         </div>
-                        <div class="col-md-12">
-                            <label for="birthday" class="form-label">Birthday</label>
-                            <input type="date" class="small-size form-control" name="birthday" id="birthday" placeholder="Enter birthday" required>
-                        </div>
-                        <div class="col-12 mt-3 modal-footer text-center">
-                            <button class="btn btn-primary" name="save" type="submit">Save</button>
-                        </div>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </div>
@@ -162,11 +201,12 @@ require APPROOT . '/views/includes/dashhead.php';
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th> User </th>
-                                        <th> First name </th>
-                                        <th> Progress </th>
-                                        <th> Amount </th>
-                                        <th> Deadline </th>
+                                        <th> Client </th>
+                                        <th> Nom </th>
+                                        <th> Prénom </th>
+                                        <th> Email </th>
+                                        <th> ville </th>
+                                        <th> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,92 +214,18 @@ require APPROOT . '/views/includes/dashhead.php';
                                         <td class="py-1">
                                             <img src="../../images/faces-clipart/pic-1.png" alt="image" />
                                         </td>
-                                        <td> Herman Beck </td>
+                                        <td> Herman </td>
+                                        <td> Beck </td>
+                                        <td> beck@gmail.com </td>
+                                        <td> Marrakech </td>
                                         <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+                                            <a class="btn-edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                <div class="badge badge-success p-2 icon-pencil">Edit</div>
+                                            </a>
+                                            <a class="btn-delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                <div class="badge badge-success p-2 icon-trash">Delete</div>
+                                            </a>
                                         </td>
-                                        <td> $ 77.99 </td>
-                                        <td> May 15, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-2.png" alt="image" />
-                                        </td>
-                                        <td> Messsy Adam </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $245.30 </td>
-                                        <td> July 1, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-3.png" alt="image" />
-                                        </td>
-                                        <td> John Richards </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $138.00 </td>
-                                        <td> Apr 12, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-4.png" alt="image" />
-                                        </td>
-                                        <td> Peter Meggik </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $ 77.99 </td>
-                                        <td> May 15, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-1.png" alt="image" />
-                                        </td>
-                                        <td> Edward </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $ 160.25 </td>
-                                        <td> May 03, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-2.png" alt="image" />
-                                        </td>
-                                        <td> John Doe </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $ 123.21 </td>
-                                        <td> April 05, 2015 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-3.png" alt="image" />
-                                        </td>
-                                        <td> Henry Tom </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td> $ 150.00 </td>
-                                        <td> June 16, 2015 </td>
                                     </tr>
                                 </tbody>
                             </table>
