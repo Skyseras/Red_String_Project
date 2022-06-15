@@ -6,12 +6,14 @@ class Adminmodels {
     }
 
     public function register($data) {
-        $this->db->query('INSERT INTO admins (name, email, password) VALUES(:name, :email, :password)');
+        $this->db->query('INSERT INTO admins (name, email, password, pdp) VALUES(:name, :email, :password, :pdp)');
 
         //Bind values
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
+        $this->db->bind(':pdp', $data['pdp']);
+
 
         //Execute function
         if ($this->db->execute()) {

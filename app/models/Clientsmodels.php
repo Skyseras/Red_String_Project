@@ -35,7 +35,7 @@ class Clientsmodels
 
     public function edit($data)
     {
-        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,gender=:gender,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:id");
+        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:id");
 
         //Bind values
         $this->db->bind(':id', $data['id']);
@@ -44,7 +44,6 @@ class Clientsmodels
         $this->db->bind(':role', $data['role']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
-        $this->db->bind(':gender', $data['gender']);
         $this->db->bind(':pdp', $data['pdp']);
         $this->db->bind(':city', $data['city']);
         $this->db->bind(':phone', $data['phone']);
@@ -78,9 +77,9 @@ class Clientsmodels
 
 
     
-    public function get()
+    public function getAllClients()
     {
-        $this->db->query('SELECT * FROM users order by id DESC');
+        $this->db->query('SELECT * FROM users WHERE role="client" order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }

@@ -20,7 +20,9 @@ class Dashboard extends Controller
     public function clients()
     {
         if (adminIn()) {
-            $this->view('dashboard/clients');
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+            $clientlist = new Clientsmodels();
+            $this->view('dashboard/clients', $clientlist->getAllClients());
         }else {
             $this->view('dashboard/login');
         }
