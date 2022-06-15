@@ -42,18 +42,18 @@ require APPROOT . '/views/includes/dashhead.php';
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
+                                <label class="form-label" for="photoDeProfil">Ajouter la photo de profil</label>
                                 <input name="pdp" type="file" class="form-control" id="pdp" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="Ville">Ville</label>
-                                <input name="ville" type="text" class="form-control" id="ville" placeholder="Ville">
+                                <input name="city" type="text" class="form-control" id="city" placeholder="Ville">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="Numéro">Numéro de Téléphone</label>
-                                <input name="number" type="text" class="form-control" id="number" placeholder="Numéro de Téléphone">
+                                <input name="phone" type="text" class="form-control" id="phone" placeholder="Numéro de Téléphone">
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +84,7 @@ require APPROOT . '/views/includes/dashhead.php';
                     Êtes-vous sûr de vouloir supprimer?<br>
                 </div>
                 <form action="<?php echo URLROOT; ?>/Clientscontroller/delete" method="POST">
-                    <input type="text" style="display: none;" name="id" class="id">
+                    <input type="text" name="id" class="id" style="display: none;">
                     <div class="px-4 py-3">
                         <button type="submit" name="save" class="btn btn-danger mr-2">Oui, supprimer ce client.</button>
                     </div>
@@ -102,6 +102,10 @@ require APPROOT . '/views/includes/dashhead.php';
                 <div class="px-4 py-3" id="form">
                     <form action="<?php echo URLROOT; ?>/Clientscontroller/edit" method="POST" enctype="multipart/form-data" class="forms-sample">
                         <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="id">id</label>
+                                <input name="id" type="text" class="form-control" id="id" placeholder="id">
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="Nom">Nom</label>
                                 <input name="lname" type="text" class="form-control" id="lname" placeholder="Nom">
@@ -123,32 +127,26 @@ require APPROOT . '/views/includes/dashhead.php';
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="Sexe" class="form-label">Sexe</label>
-                                <select name="gender" class="small-size form-control" id="gender" placeholder="Select Gender">
-                                    <option selected value="">Choisir le Sexe</option>
-                                    <option value="Male">Homme</option>
-                                    <option value="Female">Femme</option>
-                                </select>
+                                <label for="Ville">Ville</label>
+                                <input name="city" type="text" class="form-control" id="city" placeholder="Ville">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Numéro">Numéro de Téléphone</label>
+                                <input name="phone" type="text" class="form-control" id="phone" placeholder="Numéro de Téléphone">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Adresse">Adresse</label>
+                                <textarea name="address" class="form-control" id="address" rows="1"></textarea>
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
                                 <input name="pdp" type="file" class="form-control" id="pdp" />
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="Ville">Ville</label>
-                                <input name="ville" type="text" class="form-control" id="ville" placeholder="Ville">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="Numéro">Numéro de Téléphone</label>
-                                <input name="number" type="text" class="form-control" id="number" placeholder="Numéro de Téléphone">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="Adresse">Adresse</label>
-                                <textarea name="address" class="form-control" id="address" rows="1"></textarea>
+                                <label for="pdpold">pdpold</label>
+                                <textarea name="pdpold" class="form-control" id="pdpold" rows="1"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -182,7 +180,14 @@ require APPROOT . '/views/includes/dashhead.php';
                                                     </div>
                                                     <div class="inner-card-text">
                                                         <span class="report-title">TOTAL CLIENTS</span>
-                                                        <h4>123</h4>
+                                                        <h4>
+                                                            <?php
+                                                            if (count($data) > 0) {
+                                                                $num_rows = count($data);
+                                                                echo $num_rows;
+                                                            }
+                                                            ?>
+                                                        </h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-xl-6 report-inner-card align-items-center">
@@ -210,23 +215,42 @@ require APPROOT . '/views/includes/dashhead.php';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="py-1">
-                                            <img src="../../images/faces-clipart/pic-1.png" alt="image" />
-                                        </td>
-                                        <td> Herman </td>
-                                        <td> Beck </td>
-                                        <td> beck@gmail.com </td>
-                                        <td> Marrakech </td>
-                                        <td>
-                                            <a class="btn-edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                <div class="badge badge-success p-2 icon-pencil">Edit</div>
-                                            </a>
-                                            <a class="btn-delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                <div class="badge badge-success p-2 icon-trash">Delete</div>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    if (count($data) > 0) {
+                                        foreach ($data as $row) {
+                                            echo '<tr>
+                                            <td style="display: none;">' . $row->id . '</td>
+                                            <td class="py-1">
+                                                <p style="display: none;">' . $row->pdp . '</p>
+                                                <img src="' . URLROOT . '/public/img/' . $row->pdp . '" alt="image" />
+                                            </td>
+                                            <td> ' . $row->lname . ' </td>
+                                            <td> ' . $row->fname . ' </td>
+                                            <td style="display: none;"> ' . $row->role . ' </td>
+                                            <td> ' . $row->email . ' </td>
+                                            <td style="display: none;"> ' . $row->password . ' </td>
+                                            <td style="display: none;"> ' . $row->gender . ' </td>
+                                            <td> ' . $row->city . ' </td>
+                                            <td style="display: none;"> ' . $row->phone . ' </td>
+                                            <td style="display: none;"> ' . $row->address . ' </td>
+                                            <td>
+                                                <a class="btn-edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                    <div class="badge badge-success p-2 icon-pencil">Edit</div>
+                                                </a>
+                                                <a class="btn-delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                    <div class="badge badge-success p-2 icon-trash">Delete</div>
+                                                </a>
+                                            </td>
+                                        </tr>';
+                                        }
+                                    } else {
+                                        echo '<td class="text-center" colspan="6">
+                                            <h1>Pas de Résultas</h1>
+                                                <img style="width:auto; height:auto; border-radius:0;" src="https://thumbs.gfycat.com/CreamyInfatuatedAnkolewatusi-size_restricted.gif" alt="">
+                                            <h2>C\'est pas grave, Vous pouvez <a class="text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#addModal">Ajouter Client</a></h2>
+                                        </td>';
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -234,12 +258,54 @@ require APPROOT . '/views/includes/dashhead.php';
                 </div>
             </div>
         </div>
-    </div>
-    <script src="<?php echo URLROOT; ?>/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/off-canvas.js"></script>
-    <script src="<?php echo URLROOT; ?>/js/misc.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        <script>
+            document.querySelectorAll('.btn-edit').forEach(function(btn) {
+                btn.addEventListener('click', function(com) {
+                    let item = com.target.parentElement.parentElement.parentElement;
+                    let children = item.children;
+
+                    let id = children[0].textContent;
+                    let pdp = children[1].children[0].textContent;
+                    let lname = children[2].textContent;
+                    let fname = children[3].textContent;
+                    let role = children[4].textContent;
+                    let email = children[5].textContent;
+                    let password = children[6].textContent;
+                    let gender = children[7].textContent;
+                    let city = children[8].textContent;
+                    let phone = children[9].textContent;
+                    let address = children[10].textContent;
+
+                    document.querySelector('#editModal #id').value = id;
+                    document.querySelector('#editModal #pdpold').value = pdp;
+                    document.querySelector('#editModal #lname').value = lname;
+                    document.querySelector('#editModal #fname').value = fname;
+                    document.querySelector('#editModal #email').value = email;
+                    document.querySelector('#editModal #password').value = password;
+                    document.querySelector('#editModal #city').value = city;
+                    document.querySelector('#editModal #phone').value = phone;
+                    document.querySelector('#editModal #address').value = address;
+
+
+                })
+            })
+            document.querySelectorAll('.btn-delete').forEach(function(btn) {
+
+                btn.addEventListener('click', function(com) {
+                    let item = com.target.parentElement.parentElement.parentElement;
+                    let children = item.children;
+
+                    let id = children[0].textContent;
+
+                    document.querySelector('#deleteModal .id').value = id;
+                })
+            })
+        </script>
+        <script src="<?php echo URLROOT; ?>/js/vendor.bundle.base.js"></script>
+        <script src="<?php echo URLROOT; ?>/js/off-canvas.js"></script>
+        <script src="<?php echo URLROOT; ?>/js/misc.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 
 </html>

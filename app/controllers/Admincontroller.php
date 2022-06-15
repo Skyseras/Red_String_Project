@@ -13,11 +13,13 @@ class Admincontroller extends Controller
             'email' => '',
             'password' => '',
             'confirmPassword' => '',
+            'pdp' => '',
 
             'nameError' => '',
             'emailError' => '',
             'passwordError' => '',
-            'confirmPasswordError' => ''
+            'confirmPasswordError' => '',
+            'pdpError' => ''
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -30,11 +32,40 @@ class Admincontroller extends Controller
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
+                'pdp' => $_FILES['pdp'],
                 'nameError' => '',
                 'emailError' => '',
                 'passwordError' => '',
-                'confirmPasswordError' => ''
+                'confirmPasswordError' => '',
+                'pdpError' => ''
             ];
+
+
+            //Validate pdp
+            $pdpName = $data['pdp']['name'];
+            $pdpSize = $data['pdp']['size'];
+            $pdpTmp = $data['pdp']['tmp_name'];
+            $pdpError = $data['pdp']['error'];
+            $data['pdp'] = '';
+            if ($pdpError === 0) {
+                if ($pdpSize > 125000) {
+                    $data['pdpError'] = '1mb alloué! Image trop volumineuse.';
+                } else {
+                    $pdpExt = explode('.', $pdpName);
+                    $pdpActualExt = strtolower(end($pdpExt));
+                    $allowed = array('jpg', 'jpeg', 'png');
+                    if (in_array($pdpActualExt, $allowed)) {
+                        $pdpNameNew = uniqid('', true) . '.' . $pdpActualExt;
+                        $pdpDestination = $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/public/img/' . $pdpNameNew;
+                        move_uploaded_file($pdpTmp, $pdpDestination);
+                        $data['pdp'] = $pdpNameNew;
+                    } else {
+                        $data['pdpError'] = 'Format de l\'image non supporté.';
+                    }
+                }
+            } else {
+                $data['pdpError'] = 'Veuillez choisir une image';
+            }
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
             $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
@@ -78,7 +109,7 @@ class Admincontroller extends Controller
             }
 
             // Make sure that errors are empty
-            if (empty($data['nameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+            if (empty($data['nameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError']) && empty($data['pdpError'])) {
 
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
@@ -86,7 +117,7 @@ class Admincontroller extends Controller
                 //Register admin from model function
                 if ($this->adminModel->register($data)) {
                     //Redirect to the login page
-                    header('location: ' . URLROOT . '/dashboard/login');
+                    $this->view('dashboard/register', $data);
                 } else {
                     die('Something went wrong.');
                 }

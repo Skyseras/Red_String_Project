@@ -1,5 +1,6 @@
 <?php
 require APPROOT . '/views/includes/dashhead.php';
+var_dump($data);
 ?>
 
 <body>
@@ -7,24 +8,34 @@ require APPROOT . '/views/includes/dashhead.php';
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth">
         <div class="row flex-grow">
-          <div class="col-lg-5 mx-auto">
+          <div class="col-lg-6 mx-auto">
             <div class="auth-form-light text-center p-5">
               <div class="brand-logo m-1">
                 <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L.png">
               </div>
               <h4>Création de compte Administrateur</h4>
-              <form action="<?php echo URLROOT; ?>/Admincontroller/register" method="POST" class="pt-3">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
+              <form action="<?php echo URLROOT; ?>/Admincontroller/register" method="POST" enctype="multipart/form-data" class="pt-3">
+                <div class="row">
+                  <div class="form-group col-6">
+                    <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
+                <div class="row">
+                  <div class="form-group col-6">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <input type="password" class="form-control form-control-lg" name="confirmPassword" placeholder="Confimer Password" required>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="confirmPassword" placeholder="Confimer Password" required>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label class="form-label" for="photoDeprofil">Ajouter votre photo de profil</label>
+                    <input name="pdp" type="file" class="form-control" id="pdp"/>
+                  </div>
                 </div>
                 <div class="mt-3">
                   <button type="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">CREER MON COMPTE</button>
