@@ -117,7 +117,7 @@ class Admincontroller extends Controller
                 //Register admin from model function
                 if ($this->adminModel->register($data)) {
                     //Redirect to the login page
-                    $this->view('dashboard/register', $data);
+                    $this->view('dashboard/login');
                 } else {
                     die('Something went wrong.');
                 }

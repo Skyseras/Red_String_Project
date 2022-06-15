@@ -25,7 +25,14 @@ require APPROOT . '/views/includes/dashhead.php';
                   <div class=" col-md -6 col-xl report-inner-card">
                     <div class="inner-card-text">
                       <span class="report-title">CLIENTS</span>
-                      <h4>123</h4>
+                      <h4>
+                        <?php
+                        if (count($data['clients']) > 0) {
+                          $num_rows = count($data['clients']);
+                          echo $num_rows;
+                        }
+                        ?>
+                      </h4>
                     </div>
                     <div class="inner-card-icon bg-success">
                       <i class="icon-people"></i>
