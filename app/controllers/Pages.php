@@ -36,7 +36,9 @@ class Pages extends Controller
     public function dashboard()
     {
         if (adminIn()) {
-            $this->view('pages/dashboard');
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+            $clientlist = new Clientsmodels();
+            $this->view('pages/dashboard', ['clients'=>$clientlist->getAllClients()]);
         }else {
             $this->view('dashboard/login');
         }

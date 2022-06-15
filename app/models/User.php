@@ -6,10 +6,11 @@ class User {
     }
 
     public function register($data) {
-        $this->db->query('INSERT INTO users (name, role, email, password) VALUES(:name, :role, :email, :password)');
+        $this->db->query('INSERT INTO users (lname, fname, role, email, password) VALUES(:lname, :fname, :role, :email, :password)');
 
         //Bind values
-        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':lname', $data['lname']);
+        $this->db->bind(':fname', $data['fname']);
         $this->db->bind(':role', $data['role']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
@@ -22,11 +23,11 @@ class User {
         }
     }
 
-    public function login($name, $password) {
-        $this->db->query('SELECT * FROM users WHERE name = :name');
+    public function login($lname, $password) {
+        $this->db->query('SELECT * FROM users WHERE lname = :lname');
 
         //Bind value
-        $this->db->bind(':name', $name);
+        $this->db->bind(':lname', $lname);
 
         $row = $this->db->single();
 

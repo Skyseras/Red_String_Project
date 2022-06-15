@@ -26,32 +26,40 @@ require APPROOT . '/views/includes/head.php';
                             <form action="<?php echo URLROOT; ?>/Usercontroller/register" method="POST" class="signin-form">
                                 <div class="d-flex">
                                     <div class="form-group mb-3 mx-1 w-100">
-                                        <label class="label" for="name">Nom</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Username" required>
+                                        <label class="label" for="lname">Nom</label>
+                                        <input type="text" name="lname" class="form-control" placeholder="Nom" required>
                                     </div>
                                     <div class="form-group mb-3 mx-1 w-100">
-                                        <label class="label" for="role">Rôle</label>
-                                        <select class="form-control" id="role" name="role" placeholder="Êtes-vous ..">
-                                            <option selected value="">Êtes-vous ..</option>
-                                            <option value="client">Un client</option>
-                                            <option value="particulier">Un particulier</option>
-                                            <option value="promoteur">Un promoteur</option>
-                                            <option value="agence">Une agence immobilière</option>
-                                        </select>
+                                        <label class="label" for="fname">Prénom</label>
+                                        <input type="text" name="fname" class="form-control" placeholder="Prénom" required>
                                     </div>
+
                                 </div>
+                                <div class="d-flex">
+
                                 <div class="form-group mb-3 mx-1 w-100">
-                                    <label class="label" for="email">Adresse Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Username" required>
+                                    <label class="label" for="role">Rôle</label>
+                                    <select class="form-control" id="role" name="role" placeholder="Êtes-vous ..">
+                                        <option selected value="">Êtes-vous ..</option>
+                                        <option value="client">Un client</option>
+                                        <option value="particulier">Un particulier</option>
+                                        <option value="promoteur">Un promoteur</option>
+                                        <option value="agence">Une agence immobilière</option>
+                                    </select>
+                                </div>
+                                    <div class="form-group mb-3 mx-1 w-100">
+                                        <label class="label" for="email">Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                    </div>
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mb-3 mx-1 w-100">
                                         <label class="label" for="password">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                        <input type="password" name="password" class="form-control" placeholder="Mot de passe" required>
                                     </div>
                                     <div class="form-group mb-3 mx-1 w-100">
                                         <label class="label" for="confirmPassword">Confirmer mot de passe</label>
-                                        <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmer password" required>
+                                        <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmer mot de passe" required>
                                     </div>
                                 </div>
                                 <div class="form-group">

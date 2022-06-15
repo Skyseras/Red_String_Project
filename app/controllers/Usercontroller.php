@@ -9,13 +9,15 @@ class Usercontroller extends Controller
     public function register()
     {
         $data = [
-            'name' => '',
+            'lname' => '',
+            'fname' => '',
             'role' => '',
             'email' => '',
             'password' => '',
             'confirmPassword' => '',
 
-            'nameError' => '',
+            'lnameError' => '',
+            'fnameError' => '',
             'roleError' => '',
             'emailError' => '',
             'passwordError' => '',
@@ -28,12 +30,14 @@ class Usercontroller extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'name' => trim($_POST['name']),
+                'lname' => trim($_POST['lname']),
+                'fname' => trim($_POST['fname']),
                 'role' => trim($_POST['role']),
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
-                'nameError' => '',
+                'lnameError' => '',
+                'fnameError' => '',
                 'roleError' => '',
                 'emailError' => '',
                 'passwordError' => '',
@@ -44,10 +48,15 @@ class Usercontroller extends Controller
             $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
 
             //Validate name on letters/numbers
-            if (empty($data['name'])) {
-                $data['nameError'] = 'SVP ajouter le nom.';
-            } elseif (!preg_match($nameValidation, $data['name'])) {
-                $data['nameError'] = 'Le nom doit contenir des chiffres et des lettres seulement.';
+            if (empty($data['lname'])) {
+                $data['lnameError'] = 'SVP ajouter le nom.';
+            } elseif (!preg_match($nameValidation, $data['lname'])) {
+                $data['lnameError'] = 'Le nom doit contenir des chiffres et des lettres seulement.';
+            }
+            if (empty($data['fname'])) {
+                $data['fnameError'] = 'SVP ajouter le Prénom.';
+            } elseif (!preg_match($nameValidation, $data['fname'])) {
+                $data['fnameError'] = 'Le nom doit contenir des chiffres et des lettres seulement.';
             }
 
             //Validate email
@@ -81,7 +90,7 @@ class Usercontroller extends Controller
             }
 
             // Make sure that errors are empty
-            if (empty($data['nameError']) && empty($data['roleError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+            if (empty($data['lnameError']) && empty($data['fnameError']) && empty($data['roleError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
 
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
@@ -101,9 +110,9 @@ class Usercontroller extends Controller
     public function login()
     {
         $data = [
-            'name' => '',
+            'lname' => '',
             'password' => '',
-            'nameError' => '',
+            'lnameError' => '',
             'passwordError' => ''
         ];
 
@@ -113,14 +122,14 @@ class Usercontroller extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'name' => trim($_POST['name']),
+                'lname' => trim($_POST['lname']),
                 'password' => trim($_POST['password']),
-                'nameError' => '',
+                'lnameError' => '',
                 'passwordError' => '',
             ];
             //Validate name
-            if (empty($data['name'])) {
-                $data['nameError'] = 'SVP entrer le Nom.';
+            if (empty($data['lname'])) {
+                $data['lnameError'] = 'SVP entrer le Nom.';
             }
 
             //Validate password
@@ -129,8 +138,8 @@ class Usercontroller extends Controller
             }
 
             //Check if all errors are empty
-            if (empty($data['nameError']) && empty($data['passwordError'])) {
-                $loggedInUser = $this->userModel->login($data['name'], $data['password']);
+            if (empty($data['lnameError']) && empty($data['passwordError'])) {
+                $loggedInUser = $this->userModel->login($data['lname'], $data['password']);
 
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
@@ -142,9 +151,9 @@ class Usercontroller extends Controller
             }
         } else {
             $data = [
-                'name' => '',
+                'lname' => '',
                 'password' => '',
-                'nameError' => '',
+                'lnameError' => '',
                 'passwordError' => ''
             ];
         }
