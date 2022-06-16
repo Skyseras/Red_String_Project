@@ -13,10 +13,10 @@
             </form>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="Profile image"> <span class="font-weight-normal"> <?php echo $_SESSION['name']?> </span></a>
+                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="Profile image"> <span class="font-weight-normal"> <?php echo $_SESSION['name']?> </span></a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
-                        <img style="width: 40px;" class="img-md rounded-circle" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="Profile image">
+                        <img style="width: 40px;" class="img-md rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="Profile image">
                         <p class="mb-1 mt-3"><?php echo $_SESSION['name']?></p>
                         <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION['email']?></p>
                     </div>
@@ -36,7 +36,7 @@
             <li class="nav-item nav-profile">
                 <a class="nav-link">
                     <div class="profile-image">
-                        <img class="img-xs rounded-circle" src="<?php echo URLROOT; ?>/public/img/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg" alt="profile image">
+                        <img class="img-xs rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="profile image">
                         <div class="dot-indicator bg-success"></div>
                     </div>
                     <div class="text-wrapper">
@@ -59,28 +59,29 @@
             <li class="nav-item <?php if (BASE_REQUEST_URL == 'clients') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/clients">
                     <span class="menu-title">Clients</span>
-                    <i class="icon-screen-desktop menu-icon"></i>
+                    <i class="icon-people menu-icon"></i>
                 </a>
             </li>
             <li class="nav-item <?php if (BASE_REQUEST_URL == 'particuliers') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/particuliers">
                     <span class="menu-title">Particuliers</span>
-                    <i class="icon-screen-desktop menu-icon"></i>
+                    <i class="icon-briefcase menu-icon"></i>
                 </a>
             </li>
             <li class="nav-item <?php if (BASE_REQUEST_URL == 'agences') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/agences">
                     <span class="menu-title">Agences</span>
-                    <i class="icon-screen-desktop menu-icon"></i>
+                    <i class="icon-diamond menu-icon"></i>
                 </a>
             </li>
+            
             <li class="nav-item nav-category"><span class="nav-link">Listes Biens Immobiliers</span></li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <span class="menu-title">Par Grande Ville</span>
+                <a class="nav-link" data-toggle="collapse" href="#grande-ville" aria-expanded="false" aria-controls="grande-ville">
+                    <span class="menu-title">Grande Ville</span>
                     <i class="icon-doc menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="grande-ville">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Casablanca</a></li>
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Rabat</a></li>
@@ -94,11 +95,11 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <span class="menu-title">Par Type</span>
+                <a class="nav-link" data-toggle="collapse" href="#type" aria-expanded="false" aria-controls="type">
+                    <span class="menu-title">Type</span>
                     <i class="icon-doc menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="type">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Location</a></li>
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Vente</a></li>
@@ -106,11 +107,11 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <span class="menu-title">Par Supérficies</span>
+                <a class="nav-link" data-toggle="collapse" href="#sup" aria-expanded="false" aria-controls="sup">
+                    <span class="menu-title">Supérficies</span>
                     <i class="icon-doc menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="sup">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">40 - 100 m²</a></li>
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">100 - 500 m²</a></li>
@@ -119,11 +120,11 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <span class="menu-title">Par Genre</span>
+                <a class="nav-link" data-toggle="collapse" href="#genre" aria-expanded="false" aria-controls="genre">
+                    <span class="menu-title">Genre</span>
                     <i class="icon-doc menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="genre">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Terrain</a></li>
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Résidentiel</a></li>
@@ -134,38 +135,14 @@
             </li>
             <li class="nav-item nav-category"><span class="nav-link">Statistiques</span></li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                    <span class="menu-title">Basic UI Elements</span>
-                    <i class="icon-layers menu-icon"></i>
-                </a>
-                <div class="collapse" id="ui-basic">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../pages/icons/simple-line-icons.html">
-                    <span class="menu-title">Icons</span>
-                    <i class="icon-globe menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../pages/forms/basic_elements.html">
-                    <span class="menu-title">Form Elements</span>
-                    <i class="icon-book-open menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../pages/charts/chartist.html">
-                    <span class="menu-title">Charts</span>
+                <a class="nav-link" href="#">
+                    <span class="menu-title">Graphs</span>
                     <i class="icon-chart menu-icon"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/tables/basic-table.html">
-                    <span class="menu-title">Tables</span>
+                <a class="nav-link" href="#">
+                    <span class="menu-title">Tableau</span>
                     <i class="icon-grid menu-icon"></i>
                 </a>
             </li>

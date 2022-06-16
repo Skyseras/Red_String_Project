@@ -61,7 +61,7 @@ class Biensmodels
 
     public function delete($data)
     {
-        $this->db->query('DELETE FROM users WHERE id=:id');
+        $this->db->query('DELETE FROM property WHERE id=:id');
 
         $this->db->bind(':id', $data['id']);
 
@@ -90,9 +90,9 @@ class Biensmodels
         return $row;
     }
     
-    public function getAllClients()
+    public function getAllBiens()
     {
-        $this->db->query('SELECT * FROM users WHERE role="client" order by id DESC');
+        $this->db->query('SELECT * FROM property order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }

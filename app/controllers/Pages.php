@@ -55,8 +55,16 @@ class Pages extends Controller
     {
         if (adminIn()) {
             require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Adminmodels.php';
+
+
             $clientlist = new Clientsmodels();
-            $this->view('pages/dashboard', ['clients' => $clientlist->getAllClients()]);
+            $bienlist = new Biensmodels();
+            $admindetails = new Adminmodels();
+
+
+            $this->view('pages/dashboard', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'clients' => $clientlist->getAllClients(), 'biens'=>$bienlist->getAllBiens()]);
         } else {
             $this->view('dashboard/login');
         }

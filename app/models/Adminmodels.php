@@ -40,6 +40,18 @@ class Adminmodels {
         }
     }
 
+    public function getAdmin($email)
+    {
+        $this->db->query('SELECT * FROM admins WHERE email = :email');
+
+        //Bind value
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->singleassoc();
+
+        return $row;
+    }
+
     //Find user by name. name is passed in by the Controller.
     public function findAdminByName($name) {
         //Prepared statement

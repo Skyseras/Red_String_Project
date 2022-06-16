@@ -44,7 +44,7 @@ class Bienscontroller extends Controller
                 'chamber' => trim($_POST['chamber']),
                 'bath' => trim($_POST['bath']),
                 'Superficie' => trim($_POST['Superficie']),
-                'gender' => $_FILES['gender'],
+                'gender' => trim($_POST['gender']),
                 'price' => trim($_POST['price']),
                 'address' => trim($_POST['address']),
                 'pdb' => $_FILES['pdb'],
@@ -88,7 +88,7 @@ class Bienscontroller extends Controller
                 $data['pdbError'] = 'Veuillez choisir une image';
             }
 
-            if ($this->clientModel->add($data)) {
+            if ($this->bienModel->add($data)) {
                 //Redirect to the login page
                 header('location: ' . URLROOT . '/pages/dashboard');
             } else {
@@ -248,12 +248,12 @@ class Bienscontroller extends Controller
     public function delete()
     {
         $data = ['id' => $_POST['id']];
-        if ($this->clientModel->delete($data)) {
+        if ($this->bienModel->delete($data)) {
             //Redirect to the login page
-            header('location: ' . URLROOT . '/dashboard/clients');
+            header('location: ' . URLROOT . '/pages/dashboard');
         } else {
             die('Something went wrong.');
         }
-        $this->view('dashboard/clients');
+        $this->view('pages/dashboard');
     }
 }
