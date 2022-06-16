@@ -1,5 +1,5 @@
 <?php
-class Clientsmodels
+class Particuliersmodels
 {
     private $db;
     public function __construct()
@@ -77,7 +77,7 @@ class Clientsmodels
 
 
 
-    public function getClient($email)
+    public function getParticulier($email)
     {
         $this->db->query('SELECT * FROM users WHERE email = :email');
 
@@ -89,9 +89,9 @@ class Clientsmodels
         return $row;
     }
     
-    public function getAllClients()
+    public function getAllParticuliers()
     {
-        $this->db->query('SELECT * FROM users WHERE role="client" order by id DESC');
+        $this->db->query('SELECT * FROM users WHERE role="psarticulier" order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }

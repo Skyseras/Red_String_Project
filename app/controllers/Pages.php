@@ -31,15 +31,33 @@ class Pages extends Controller
     }
     public function profile()
     {
-        $this->view('pages/profile');
+        if (isLoggedIn()) {
+            if ($_SESSION['role'] == 'client') {
+                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+                $clientinfo = new Clientsmodels();
+                $this->view('pages/profile', ['clientinfo'=>$clientinfo->getClient($_SESSION['email'])]);
+            }
+            if ($_SESSION['role'] == 'particulier') {
+                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+                $clientinfo = new Clientsmodels();
+                $this->view('pages/profile', ['clientinfo'=>$clientinfo->getClient($_SESSION['email'])]);
+            }
+            if ($_SESSION['role'] == 'agence') {
+                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+                $clientinfo = new Clientsmodels();
+                $this->view('pages/profile', ['clientinfo'=>$clientinfo->getClient($_SESSION['email'])]);
+            }
+        } else {
+            $this->view('pages/login');
+        }
     }
     public function dashboard()
     {
         if (adminIn()) {
             require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
             $clientlist = new Clientsmodels();
-            $this->view('pages/dashboard', ['clients'=>$clientlist->getAllClients()]);
-        }else {
+            $this->view('pages/dashboard', ['clients' => $clientlist->getAllClients()]);
+        } else {
             $this->view('dashboard/login');
         }
     }

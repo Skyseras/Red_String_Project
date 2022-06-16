@@ -70,6 +70,12 @@ class Database
         return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
+    public function singleassoc()
+    {
+        $this->execute();
+        return $this->statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     //Get's the row count
     public function rowCount()
     {

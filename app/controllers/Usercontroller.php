@@ -110,9 +110,9 @@ class Usercontroller extends Controller
     public function login()
     {
         $data = [
-            'lname' => '',
+            'email' => '',
             'password' => '',
-            'lnameError' => '',
+            'emailError' => '',
             'passwordError' => ''
         ];
 
@@ -122,14 +122,14 @@ class Usercontroller extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'lname' => trim($_POST['lname']),
+                'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
-                'lnameError' => '',
+                'emailError' => '',
                 'passwordError' => '',
             ];
             //Validate name
-            if (empty($data['lname'])) {
-                $data['lnameError'] = 'SVP entrer le Nom.';
+            if (empty($data['email'])) {
+                $data['emailError'] = 'SVP entrer le Nom.';
             }
 
             //Validate password
@@ -138,8 +138,8 @@ class Usercontroller extends Controller
             }
 
             //Check if all errors are empty
-            if (empty($data['lnameError']) && empty($data['passwordError'])) {
-                $loggedInUser = $this->userModel->login($data['lname'], $data['password']);
+            if (empty($data['emailError']) && empty($data['passwordError'])) {
+                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
@@ -151,9 +151,9 @@ class Usercontroller extends Controller
             }
         } else {
             $data = [
-                'lname' => '',
+                'email' => '',
                 'password' => '',
-                'lnameError' => '',
+                'emailError' => '',
                 'passwordError' => ''
             ];
         }
@@ -162,6 +162,7 @@ class Usercontroller extends Controller
 
     public function createUserSession($user)
     {
+        $_SESSION['email'] = $user->email;
         $_SESSION['role'] = $user->role;
         header('location:' . URLROOT . '/pages/index');
     }

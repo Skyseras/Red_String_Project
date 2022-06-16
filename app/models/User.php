@@ -23,11 +23,11 @@ class User {
         }
     }
 
-    public function login($lname, $password) {
-        $this->db->query('SELECT * FROM users WHERE lname = :lname');
+    public function login($email, $password) {
+        $this->db->query('SELECT * FROM users WHERE email = :email');
 
         //Bind value
-        $this->db->bind(':lname', $lname);
+        $this->db->bind(':email', $email);
 
         $row = $this->db->single();
 
