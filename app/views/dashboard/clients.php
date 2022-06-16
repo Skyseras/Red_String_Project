@@ -247,7 +247,7 @@ require APPROOT . '/views/includes/dashhead.php';
                                         echo '<td class="text-center" colspan="6">
                                             <h1>Pas de Résultas</h1>
                                                 <img style="width:auto; height:auto; border-radius:0;" src="https://thumbs.gfycat.com/CreamyInfatuatedAnkolewatusi-size_restricted.gif" alt="">
-                                            <h2>C\'est pas grave, Vous pouvez <a class="text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#addModal">Ajouter Client</a></h2>
+                                            <h2>C\'est pas grave, Vous pouvez <a class="text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#addModal">ajouter un client</a></h2>
                                         </td>';
                                     }
                                     ?>

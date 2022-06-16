@@ -2,7 +2,7 @@
 require APPROOT . '/views/includes/head.php';
 ?>
 
-<body>
+<body class="scrollbar-hidden">
 	<?php
 	require APPROOT . '/views/includes/header.php';
 	?>

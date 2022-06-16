@@ -1,6 +1,5 @@
 <?php
 require APPROOT . '/views/includes/dashhead.php';
-var_dump($data);
 ?>
 
 <body>
