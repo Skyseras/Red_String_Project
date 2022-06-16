@@ -169,7 +169,7 @@ require APPROOT . '/views/includes/dashhead.php';
                 <h5 class="modal-title" id="editModaltitle">Modifier Ce Client</h5>
               </div>
               <div class="px-4 py-3" id="form">
-                <form action="<?php echo URLROOT; ?>/Bienscontroller/add" method="POST" enctype="multipart/form-data" class="forms-sample">
+                <form action="<?php echo URLROOT; ?>/Bienscontroller/edit" method="POST" enctype="multipart/form-data" class="forms-sample">
                   <div class="row">
                     <div class="form-group col-md-6" style="display: none;">>
                       <label for="id">id</label>
@@ -226,12 +226,12 @@ require APPROOT . '/views/includes/dashhead.php';
                       <div class="mx-1 row">
                         <input name="genderold" type="text" class="form-control col-md-5" id="genderold" readonly>
                         <select name="gender" class="small-size form-control col-md-7" id="gender" placeholder="Select Gender">
-                        <option selected value="">Choisir le genre du bien</option>
-                        <option value="Terrain">Terrain</option>
-                        <option value="Résidentiel">Résidentiel</option>
-                        <option value="Commercial">Commercial</option>
-                        <option value="Industriel">Industriel</option>
-                      </select>
+                          <option selected value="">Choisir le genre du bien</option>
+                          <option value="Terrain">Terrain</option>
+                          <option value="Résidentiel">Résidentiel</option>
+                          <option value="Commercial">Commercial</option>
+                          <option value="Industriel">Industriel</option>
+                        </select>
                       </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -250,6 +250,10 @@ require APPROOT . '/views/includes/dashhead.php';
                     <div class="form-group col-md-6">
                       <label class="form-label" for="photoDuBien">Ajouter la photo du bien</label>
                       <input name="pdb" type="file" class="form-control" id="pdb" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="pdbold">pdbold</label>
+                      <textarea name="pdbold" class="form-control" id="pdbold" rows="1"></textarea>
                     </div>
                   </div>
                   <div class="row">
@@ -363,7 +367,7 @@ require APPROOT . '/views/includes/dashhead.php';
         document.querySelector('#editModal #genderold').value = gender;
         document.querySelector('#editModal #priceold').value = price;
         document.querySelector('#editModal #address').value = address;
-        document.querySelector('#editModal #pdpold').value = pdb;
+        document.querySelector('#editModal #pdbold').value = pdb;
       })
     })
     document.querySelectorAll('.btn-delete').forEach(function(btn) {

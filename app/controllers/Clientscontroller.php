@@ -179,7 +179,7 @@ class Clientscontroller extends Controller
             ];
 
             //Validate pdp
-            if ($data['pdp']['error'] == 4) {
+            if ($data['pdp']['error'] !== 4) {
                 $data['pdp'] = '';
                 $data['pdp'] = $data['pdpold'];
                 //Validate on letters/numbers
