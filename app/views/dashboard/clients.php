@@ -102,7 +102,7 @@ require APPROOT . '/views/includes/dashhead.php';
                 <div class="px-4 py-3" id="form">
                     <form action="<?php echo URLROOT; ?>/Clientscontroller/edit" method="POST" enctype="multipart/form-data" class="forms-sample">
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6" style="display: none;">
                                 <label for="id">id</label>
                                 <input name="id" type="text" class="form-control" id="id" placeholder="id">
                             </div>
@@ -144,7 +144,7 @@ require APPROOT . '/views/includes/dashhead.php';
                                 <label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
                                 <input name="pdp" type="file" class="form-control" id="pdp" />
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6" style="display: none;">
                                 <label for="pdpold">pdpold</label>
                                 <textarea name="pdpold" class="form-control" id="pdpold" rows="1"></textarea>
                             </div>

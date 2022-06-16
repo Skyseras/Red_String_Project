@@ -43,7 +43,6 @@ require APPROOT . '/views/includes/head.php';
                                         <option selected value="">Êtes-vous ..</option>
                                         <option value="client">Un client</option>
                                         <option value="particulier">Un particulier</option>
-                                        <option value="promoteur">Un promoteur</option>
                                         <option value="agence">Une agence immobilière</option>
                                     </select>
                                 </div>

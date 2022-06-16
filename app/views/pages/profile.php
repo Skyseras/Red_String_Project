@@ -6,6 +6,70 @@ require APPROOT . '/views/includes/head.php';
 	<?php
 	require APPROOT . '/views/includes/headerthin.php';
 	?>
+	<!-- Modal edit -->
+	<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editModaltitle">Modifier Ce Client</h5>
+				</div>
+				<div class="px-4 py-3" id="form">
+					<form action="<?php echo URLROOT; ?>/<?php echo $_SESSION['role'] ?>controller/edit" method="POST" enctype="multipart/form-data" class="forms-sample">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Nom">Nom</label>
+								<input name="lname" type="text" class="form-control" id="lname" value="<?php echo $data['clientinfo']['lname']?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Prénom">Prénom</label>
+								<input name="fname" type="text" class="form-control" id="fname" value="<?php echo $data['clientinfo']['fname']?>">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Email">Email</label>
+								<input name="email" type="email" class="form-control" id="email" value="<?php echo $data['clientinfo']['email']?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Password">Nouveau Password</label>
+								<input name="password" type="password" class="form-control" id="password" placeholder="Password">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Ville">Ville</label>
+								<input name="city" type="text" class="form-control" id="city" value="<?php echo $data['clientinfo']['city']?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Numéro">Numéro de Téléphone</label>
+								<input name="phone" type="text" class="form-control" id="phone" value="<?php echo $data['clientinfo']['phone']?>">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Adresse">Adresse</label>
+								<textarea name="address" class="form-control" id="address" rows="1" value="<?php echo $data['clientinfo']['address']?>"></textarea>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
+								<input name="pdp" type="file" class="form-control" id="pdp" />
+							</div>
+							<div class="form-group col-md-6" style="display: none;">
+								<label for="pdpold">pdpold</label>
+								<textarea name="pdpold" class="form-control" id="pdpold" rows="1" value="<?php echo $data['clientinfo']['pdp']?>"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
+								<button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<section class="ftco-section bg-light py-5">
 		<div class="container-xl">
 			<div class="row">
@@ -15,11 +79,27 @@ require APPROOT . '/views/includes/head.php';
 					</div>
 					<div class="property-wrap my-0">
 						<div class="text">
-							<a href="#" class="img rounded-circle" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)"></a>
-							<h3 class="my-3"><a>Yasser elmahfoudi</a></h3>
-							<p class="m-0"><span class="icon-magnifier"></span>&nbsp +212 0799999999</p>
-							<p class="m-0"><span class="icon-magnifier"></span>&nbsp qu almanar villa 15</p>
-							<p class="m-0"><span class="icon-magnifier"></span>&nbsp yasser@gmail.Com</p>
+							<a class="img rounded-circle" style="height:210px; background-image:url(
+								<?php echo URLROOT; ?>/public/img/<?php if (!empty($data['clientinfo']['pdp'])) {
+																		echo $data['clientinfo']['pdp'];
+																	} else {
+																		echo 'pdpdefault.jpg';
+																	} ?>)"></a>
+							<div class="text-center">
+								<h3 class="mt-3"><a><?php if ($data['clientinfo']) {
+														echo $data['clientinfo']['fname'] . ' ' . $data['clientinfo']['lname'];
+													} ?></a></h3>
+								<a type="button" data-bs-toggle="modal" data-bs-target="#editModal">Modifier mon profil</a>
+							</div>
+							<p class="m-0"><span class="icon-magnifier"></span>&nbsp <?php if ($data['clientinfo']) {
+																							echo $data['clientinfo']['phone'];
+																						} ?></p>
+							<p class="m-0"><span class="icon-magnifier"></span>&nbsp <?php if ($data['clientinfo']) {
+																							echo $data['clientinfo']['address'];
+																						} ?></p>
+							<p class="m-0"><span class="icon-magnifier"></span>&nbsp <?php if ($data['clientinfo']) {
+																							echo $data['clientinfo']['email'];
+																						} ?></p>
 						</div>
 					</div>
 				</div>
@@ -110,6 +190,8 @@ require APPROOT . '/views/includes/head.php';
 			</div>
 		</div>
 	</section>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 	<?php
 	require APPROOT . '/views/includes/footerthin.php';
 	?>

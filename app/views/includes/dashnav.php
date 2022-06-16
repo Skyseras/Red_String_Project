@@ -68,12 +68,6 @@
                     <i class="icon-screen-desktop menu-icon"></i>
                 </a>
             </li>
-            <li class="nav-item <?php if (BASE_REQUEST_URL == 'promoteurs') echo 'active'; ?>">
-                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/promoteurs">
-                    <span class="menu-title">Promoteurs</span>
-                    <i class="icon-screen-desktop menu-icon"></i>
-                </a>
-            </li>
             <li class="nav-item <?php if (BASE_REQUEST_URL == 'agences') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/agences">
                     <span class="menu-title">Agences</span>

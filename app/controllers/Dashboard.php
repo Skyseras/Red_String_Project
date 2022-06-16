@@ -35,14 +35,6 @@ class Dashboard extends Controller
             $this->view('dashboard/login');
         }
     }
-    public function promoteurs()
-    {
-        if (adminIn()) {
-            $this->view('dashboard/promoteurs');
-        }else {
-            $this->view('dashboard/login');
-        }
-    }
     public function agences()
     {
         if (adminIn()) {

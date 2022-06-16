@@ -1,5 +1,5 @@
 <?php
-class Clientsmodels
+class Biensmodels
 {
     private $db;
     public function __construct()
@@ -10,19 +10,20 @@ class Clientsmodels
 
     public function add($data)
     {
-        $this->db->query('INSERT INTO users (lname, fname, role, email, password, gender, pdp, city, phone, address) VALUES(:lname, :fname, :role, :email, :password, :gender, :pdp, :city, :phone, :address)');
+        $this->db->query('INSERT INTO property (city, description, type, chamber, bath, Superficie, gender, price, address, pdb) VALUES(:city, :description, :type, :chamber, :bath, :Superficie, :gender, :price, :address, :pdb)');
 
         //Bind values
-        $this->db->bind(':lname', $data['lname']);
-        $this->db->bind(':fname', $data['fname']);
-        $this->db->bind(':role', $data['role']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':gender', $data['gender']);
-        $this->db->bind(':pdp', $data['pdp']);
         $this->db->bind(':city', $data['city']);
-        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':type', $data['type']);
+        $this->db->bind(':chamber', $data['chamber']);
+        $this->db->bind(':bath', $data['bath']);
+        $this->db->bind(':Superficie', $data['Superficie']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':price', $data['price']);
         $this->db->bind(':address', $data['address']);
+        $this->db->bind(':pdb', $data['pdb']);
+
 
         //Execute function
         if ($this->db->execute()) {
