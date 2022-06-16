@@ -36,19 +36,20 @@ class Biensmodels
 
     public function edit($data)
     {
-        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:id");
+        $this->db->query("UPDATE property SET city=:city,description=:description,type=:type,chamber=:chamber,bath=:bath,Superficie=:Superficie,gender=:gender,price=:price,address=:address,pdb=:pdb WHERE id =:id");
 
         //Bind values
         $this->db->bind(':id', $data['id']);
-        $this->db->bind(':lname', $data['lname']);
-        $this->db->bind(':fname', $data['fname']);
-        $this->db->bind(':role', $data['role']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':pdp', $data['pdp']);
         $this->db->bind(':city', $data['city']);
-        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':type', $data['type']);
+        $this->db->bind(':chamber', $data['chamber']);
+        $this->db->bind(':bath', $data['bath']);
+        $this->db->bind(':Superficie', $data['Superficie']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':price', $data['price']);
         $this->db->bind(':address', $data['address']);
+        $this->db->bind(':pdb', $data['pdb']);
 
         if ($this->db->execute()) {
             return true;
