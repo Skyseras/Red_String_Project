@@ -7,9 +7,9 @@
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
         <ul class="navbar-nav navbar-nav-right ml-auto">
-            <form class="search-form d-none d-md-block" action="#">
+            <form class="search-form d-none d-md-block" action="<?= basename($_SERVER['REQUEST_URI']) == 'property'? URLROOT.'/dashboard/property':'' ?>" method="GET">
                 <i class="icon-magnifier"></i>
-                <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                <input type="search" class="form-control" value="<?= $_GET['searchword']??''?>" name="searchword" placeholder="Search Here" title="Search here">
             </form>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">

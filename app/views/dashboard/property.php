@@ -19,46 +19,36 @@ require APPROOT . '/views/includes/dashhead.php';
                 <p class="ml-auto mb-0">Lister les propriétés par votre choix<i class="icon-bulb"></i></p>
               </div>
               <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                <div class="col-sm-12 col-md-4 p-3 text-center btn-wrapper">
                   <button type="button" data-toggle="collapse" href="#grande-ville" aria-expanded="false" aria-controls="grande-ville" class="btn px-0"> <i class="icon-directions mr-2"></i>Grande Ville</button>
                   <div class="collapse" id="grande-ville">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Casablanca">Casablanca</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Rabat">Rabat</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Marrakech">Marrakech</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Tanger">Tanger</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Casablanca">Casablanca</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Rabat">Rabat</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Marrakech">Marrakech</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Tanger">Tanger</a></li>
                     </ul>
+                  </div>
                 </div>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                <div class="col-sm-12 col-md-4 p-3 text-center btn-wrapper">
                   <button type="button" data-toggle="collapse" href="#type" aria-expanded="false" aria-controls="type" class="btn px-0"><i class="icon-key mr-2"></i>Type</button>
                   <div class="collapse" id="type">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Location">Location</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Vente">Vente</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Location">Location</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Vente">Vente</a></li>
                     </ul>
+                  </div>
                 </div>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                  <button type="button" data-toggle="collapse" href="#sup" aria-expanded="false" aria-controls="sup" class="btn px-0"><i class="icon-home mr-2"></i>Supérficies</button>
-                  <div class="collapse" id="sup">
-                    <ul class="nav flex-column sub-menu text-primary">
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/m40-100">40 - 100 m²</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/m100-500">100 - 500 m²</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/m500-2000">500 - 2000 m²</a></li>
-                    </ul>
-                </div>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                <div class="col-sm-12 col-md-4 p-3 text-center btn-wrapper">
                   <button type="button" data-toggle="collapse" href="#genre" aria-expanded="false" aria-controls="genre" class="btn px-0"><i class="icon-tag mr-2"></i>Genre</button>
                   <div class="collapse" id="genre">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Terrain">Terrain</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Residentiel">Résidentiel</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Commercial">Commercial</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Industriel">Industriel</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Terrain">Terrain</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Résidentiel">Résidentiel</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Commercial">Commercial</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Industriel">Industriel</a></li>
                     </ul>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -43,7 +43,7 @@ class Dashboard extends Controller
             $this->view('dashboard/login');
         }
     }
-    public function property($param='')
+    public function property($param = '')
     {
         if (adminIn()) {
             require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
@@ -52,8 +52,12 @@ class Dashboard extends Controller
             $bienlist = new Biensmodels();
             $admindetails = new Adminmodels();
 
+
+
             if (!empty($param)) {
                 $this->view('dashboard/property', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'biens' => $bienlist->getpropsearch($param)]);
+            } else if (isset($_GET['searchword'])) {
+                $this->view('dashboard/property', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'biens' => $bienlist->getsearch($_GET['searchword'])]);
             } else {
                 $this->view('dashboard/property', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'biens' => $bienlist->getAllBiens()]);
             }

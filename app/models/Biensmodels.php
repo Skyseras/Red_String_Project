@@ -75,22 +75,6 @@ class Biensmodels
     }
 
 
-
-
-
-
-    public function getClient($email)
-    {
-        $this->db->query('SELECT * FROM users WHERE email = :email');
-
-        //Bind value
-        $this->db->bind(':email', $email);
-
-        $row = $this->db->singleassoc();
-
-        return $row;
-    }
-    
     public function getAllBiens()
     {
         $this->db->query('SELECT * FROM property order by id DESC');
@@ -99,15 +83,15 @@ class Biensmodels
     }
 
     public function getpropsearch($word)
-    {
-        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' order by id DESC");
+    {        
+        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();
     }
 
-    public function getStudentsMale()
+    public function getsearch($word)
     {
-        $this->db->query('SELECT * FROM students WHERE gender="Male"');
+        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' or superficie LIKE '%$word%' or price LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();
     }

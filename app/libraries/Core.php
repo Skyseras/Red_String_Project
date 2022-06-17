@@ -21,10 +21,6 @@ class Core
         $this->currentController = ucwords($url[0]);
         // Unset 0 Index
         unset($url[0]);
-      } else {
-        // If not set as controller
-        $this->currentController = 'Pages';
-        $this->currentMethod = 'E404';
       }
     }
 
@@ -41,10 +37,8 @@ class Core
         $this->currentMethod = $url[1];
         // Unset 1 index
         unset($url[1]);
-      } else {
-        $this->currentMethod = 'E404';
       }
-    } else
+    }
 
     // Get params
     $this->params = $url ? array_values($url) : [];
