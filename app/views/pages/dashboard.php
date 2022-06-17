@@ -7,7 +7,6 @@ require APPROOT . '/views/includes/dashhead.php';
     <?php
     require APPROOT . '/views/includes/dashnav.php';
     ?>
-
     <div class="main-panel">
       <div class="content-wrapper p-2">
         <!-- Quick Action Toolbar Ends-->
@@ -28,7 +27,7 @@ require APPROOT . '/views/includes/dashhead.php';
                       <span class="report-title">CLIENTS</span>
                       <h4>
                         <?php
-                        if (count($data['clients']) > 0) {
+                        if (count($data['clients']) >= 0) {
                           $num_rows = count($data['clients']);
                           echo $num_rows;
                         }
@@ -42,7 +41,12 @@ require APPROOT . '/views/includes/dashhead.php';
                   <div class="col-md-6 col-xl report-inner-card">
                     <div class="inner-card-text">
                       <span class="report-title">PARTICULIERS</span>
-                      <h4>58</h4>
+                      <h4><?php
+                          if (count($data['particuliers']) >= 0) {
+                            $num_rows = count($data['particuliers']);
+                            echo $num_rows;
+                          }
+                          ?></h4>
                     </div>
                     <div class="inner-card-icon bg-danger">
                       <i class="icon-briefcase"></i>
@@ -51,7 +55,12 @@ require APPROOT . '/views/includes/dashhead.php';
                   <div class="col-md-6 col-xl report-inner-card">
                     <div class="inner-card-text">
                       <span class="report-title">AGENCES</span>
-                      <h4>25</h4>
+                      <h4><?php
+                          if (count($data['agences']) >= 0) {
+                            $num_rows = count($data['agences']);
+                            echo $num_rows;
+                          }
+                          ?></h4>
                     </div>
                     <div class="inner-card-icon bg-primary">
                       <i class="icon-diamond"></i>
@@ -311,6 +320,7 @@ require APPROOT . '/views/includes/dashhead.php';
                                   <td class="py-1" style="display: none;">
                                       <p>' . $row->pdb . '</p>
                                   </td>
+                                  <td id="user_id" style="display: none;"> ' . $row->user_id . ' </td>
                                   <td>
                                       <a class="btn-edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal">
                                           <div class="badge badge-success p-2 icon-pencil">Edit</div>
@@ -329,6 +339,7 @@ require APPROOT . '/views/includes/dashhead.php';
                               </td>';
                       }
                       ?>
+
                     </tbody>
                   </table>
                 </div>

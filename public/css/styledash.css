@@ -8355,13 +8355,13 @@ a.badge:focus {
 }
 
 .badge-primary {
-    color: #212529;
+    color: #fff;
     background-color: #1bdbe0;
 }
 
 a.badge-primary:hover,
 a.badge-primary:focus {
-    color: #212529;
+    color: #fff;
     background-color: #16afb2;
 }
 

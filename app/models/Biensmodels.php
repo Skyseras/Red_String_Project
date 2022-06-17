@@ -75,22 +75,6 @@ class Biensmodels
     }
 
 
-
-
-
-
-    public function getClient($email)
-    {
-        $this->db->query('SELECT * FROM users WHERE email = :email');
-
-        //Bind value
-        $this->db->bind(':email', $email);
-
-        $row = $this->db->singleassoc();
-
-        return $row;
-    }
-    
     public function getAllBiens()
     {
         $this->db->query('SELECT * FROM property order by id DESC');
@@ -99,30 +83,62 @@ class Biensmodels
     }
 
     public function getpropsearch($word)
-    {
-        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' order by id DESC");
+    {        
+        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();
     }
 
-    public function getStudentsMale()
+    public function getsearch($word)
     {
-        $this->db->query('SELECT * FROM students WHERE gender="Male"');
+        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' or superficie LIKE '%$word%' or price LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();
     }
-    public function getStudentsFemale()
+    public function getBiensVente()
     {
-        $this->db->query('SELECT * FROM students WHERE gender="Female"');
+        $this->db->query('SELECT * FROM property WHERE type="Vente"');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+    public function getBiensLocation()
+    {
+        $this->db->query('SELECT * FROM property WHERE type="Location"');
         $this->db->execute();
         return $this->db->resultSet();
     }
 
-    public function getStudentsByClass()
+
+    public function getbiensBycity()
     {
-        $this->db->query('SELECT count(*) AS students_count, class AS class_name FROM students GROUP by class;');
+        $this->db->query('SELECT count(*) AS prop_count, city AS city_name FROM property GROUP by city;');
         $this->db->execute();
         return $this->db->resultSet();
     }
 
+
+    public function getc()
+    {
+        $this->db->query('SELECT * FROM property WHERE city = "Casablanca"');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+    public function getm()
+    {
+        $this->db->query('SELECT * FROM property WHERE city = "Marrakech"');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+    public function gettan()
+    {
+        $this->db->query('SELECT * FROM property WHERE city = "Tanger"');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+    public function getrab()
+    {
+        $this->db->query("SELECT * FROM property WHERE city = 'Rabat'");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
 }

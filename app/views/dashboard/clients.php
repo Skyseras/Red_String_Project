@@ -182,8 +182,8 @@ require APPROOT . '/views/includes/dashhead.php';
                                                         <span class="report-title">TOTAL CLIENTS</span>
                                                         <h4>
                                                             <?php
-                                                            if (count($data) > 0) {
-                                                                $num_rows = count($data);
+                                                            if (count($data['clients']) >= 0) {
+                                                                $num_rows = count($data['clients']);
                                                                 echo $num_rows;
                                                             }
                                                             ?>
@@ -216,8 +216,8 @@ require APPROOT . '/views/includes/dashhead.php';
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if (count($data) > 0) {
-                                        foreach ($data as $row) {
+                                    if (count($data['clients']) > 0) {
+                                        foreach ($data['clients'] as $row) {
                                             echo '<tr>
                                             <td style="display: none;">' . $row->id . '</td>
                                             <td class="py-1">

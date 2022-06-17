@@ -1,0 +1,4 @@
+type,version,comment
+header,5.1.1,"Export to JSON plugin for PHPMyAdmin"
+database,immomaroc
+table,users,immomaroc,Array

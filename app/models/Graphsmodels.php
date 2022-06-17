@@ -1,5 +1,5 @@
 <?php
-class Particuliersmodels
+class Graphsmodels
 {
     private $db;
     public function __construct()
@@ -75,7 +75,9 @@ class Particuliersmodels
 
 
 
-    public function getParticulier($email)
+
+
+    public function getClient($email)
     {
         $this->db->query('SELECT * FROM users WHERE email = :email');
 
@@ -87,9 +89,9 @@ class Particuliersmodels
         return $row;
     }
     
-    public function getAllParticuliers()
+    public function getAllClients()
     {
-        $this->db->query('SELECT * FROM users WHERE role="particulier" order by id DESC');
+        $this->db->query('SELECT * FROM users WHERE role="client" order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }
