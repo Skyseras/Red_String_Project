@@ -13,12 +13,20 @@
             </form>
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="Profile image"> <span class="font-weight-normal"> <?php echo $_SESSION['name']?> </span></a>
+                    <img class="img-xs rounded-circle ml-2" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) {
+                                                                                                        echo 'pdpdefault.jpg';
+                                                                                                    } else {
+                                                                                                        echo $data['admin']['pdp'];
+                                                                                                    } ?>" alt="Profile image"> <span class="font-weight-normal"> <?php echo $_SESSION['name'] ?> </span></a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
-                        <img style="width: 40px;" class="img-md rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="Profile image">
-                        <p class="mb-1 mt-3"><?php echo $_SESSION['name']?></p>
-                        <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION['email']?></p>
+                        <img style="width: 40px;" class="img-md rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) {
+                                                                                                                            echo 'pdpdefault.jpg';
+                                                                                                                        } else {
+                                                                                                                            echo $data['admin']['pdp'];
+                                                                                                                        } ?>" alt="Profile image">
+                        <p class="mb-1 mt-3"><?php echo $_SESSION['name'] ?></p>
+                        <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION['email'] ?></p>
                     </div>
                     <a class="dropdown-item" href="<?php echo URLROOT; ?>/Admincontroller/logout"><i class="dropdown-item-icon icon-power text-primary"></i>Se déconnecter</a>
                 </div>
@@ -32,20 +40,21 @@
 <div class="container-fluid page-body-wrapper">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-
             <li class="nav-item nav-profile">
                 <a class="nav-link">
                     <div class="profile-image">
-                        <img class="img-xs rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) { echo 'pdpdefault.jpg'; } else { echo $data['admin']['pdp']; }?>" alt="profile image">
+                        <img class="img-xs rounded-circle" src="<?php echo URLROOT; ?>/public/img/<?php if (empty($data['admin']['pdp'])) {
+                                                                                                        echo 'pdpdefault.jpg';
+                                                                                                    } else {
+                                                                                                        echo $data['admin']['pdp'];
+                                                                                                    } ?>" alt="profile image">
                         <div class="dot-indicator bg-success"></div>
                     </div>
                     <div class="text-wrapper">
-                        <p class="profile-name"><?php echo $_SESSION['name']?></p>
+                        <p class="profile-name"><?php echo $_SESSION['name'] ?></p>
                         <p class="designation">Administrator</p>
                     </div>
                 </a>
-            </li>
-            </a>
             </li>
             <li class="nav-item <?php if (BASE2_REQUEST_URL == 'dashboard') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/pages/dashboard">
@@ -53,8 +62,16 @@
                     <i class="icon-layers menu-icon"></i>
                 </a>
             </li>
+            <li class="nav-item <?php if (BASE_REQUEST_URL == 'property') echo 'active'; ?>">
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property">
+                    <span class="menu-title">Propriétés</span>
+                    <i class="icon-home menu-icon"></i>
+                </a>
+            </li>
             <li class="nav-item nav-category">
-                <span class="nav-link">Listes Utilisateurs</span>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/clients">
+                    <span class="nav-link p-0">Listes Utilisateurs</span>
+                </a>
             </li>
             <li class="nav-item <?php if (BASE_REQUEST_URL == 'clients') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/clients">
@@ -74,30 +91,33 @@
                     <i class="icon-diamond menu-icon"></i>
                 </a>
             </li>
-            
-            <li class="nav-item nav-category"><span class="nav-link">Listes Biens Immobiliers</span></li>
+            <!-- <li class="nav-item nav-category">
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property">
+                    <span class="nav-link p-0" style="border-top: 0;">Listes Biens Immobiliers</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#grande-ville" aria-expanded="false" aria-controls="grande-ville">
                     <span class="menu-title">Grande Ville</span>
-                    <i class="icon-doc menu-icon"></i>
+                    <i class="icon-directions menu-icon"></i>
                 </a>
                 <div class="collapse" id="grande-ville">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Casablanca</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Rabat</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Marrakech</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Tanger</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Agadir</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Kenitra</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Fès</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Oujda</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/casablanca">Casablanca</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/rabat">Rabat</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/marrakech">Marrakech</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/tanger">Tanger</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/agadir">Agadir</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/kenitra">Kenitra</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/fès">Fès</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/oujda">Oujda</a></li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#type" aria-expanded="false" aria-controls="type">
                     <span class="menu-title">Type</span>
-                    <i class="icon-doc menu-icon"></i>
+                    <i class="icon-key menu-icon"></i>
                 </a>
                 <div class="collapse" id="type">
                     <ul class="nav flex-column sub-menu">
@@ -109,7 +129,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#sup" aria-expanded="false" aria-controls="sup">
                     <span class="menu-title">Supérficies</span>
-                    <i class="icon-doc menu-icon"></i>
+                    <i class="icon-home menu-icon"></i>
                 </a>
                 <div class="collapse" id="sup">
                     <ul class="nav flex-column sub-menu">
@@ -122,7 +142,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#genre" aria-expanded="false" aria-controls="genre">
                     <span class="menu-title">Genre</span>
-                    <i class="icon-doc menu-icon"></i>
+                    <i class="icon-tag menu-icon"></i>
                 </a>
                 <div class="collapse" id="genre">
                     <ul class="nav flex-column sub-menu">
@@ -132,18 +152,16 @@
                         <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Industriel</a></li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item nav-category"><span class="nav-link">Statistiques</span></li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span class="menu-title">Graphs</span>
-                    <i class="icon-chart menu-icon"></i>
+            </li> -->
+            <li class="nav-item nav-category">
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/clients">
+                    <span class="nav-link p-0" style="border-top: 0;">Statistiques</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <span class="menu-title">Tableau</span>
-                    <i class="icon-grid menu-icon"></i>
+                    <span class="menu-title">Graphs</span>
+                    <i class="icon-chart menu-icon"></i>
                 </a>
             </li>
         </ul>

@@ -98,9 +98,9 @@ class Biensmodels
         return $this->db->resultSet();
     }
 
-    public function getsearch($word)
+    public function getpropsearch($word)
     {
-        $this->db->query("SELECT * FROM students WHERE name LIKE '%$word%' OR gender LIKE '%$word%' OR class LIKE '%$word%' OR parent LIKE '%$word%' OR address LIKE '%$word%' OR email LIKE '%$word%' OR birthday LIKE '%$word%' order by id DESC");
+        $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' order by id DESC");
         $this->db->execute();
         return $this->db->resultSet();
     }
