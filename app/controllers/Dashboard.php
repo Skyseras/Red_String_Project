@@ -5,7 +5,7 @@ class Dashboard extends Controller
     {
         if (adminIn()) {
             $this->view('pages/dashboard');
-        }else {
+        } else {
             $this->view('dashboard/login');
         }
     }
@@ -23,7 +23,7 @@ class Dashboard extends Controller
             require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
             $clientlist = new Clientsmodels();
             $this->view('dashboard/clients', $clientlist->getAllClients());
-        }else {
+        } else {
             $this->view('dashboard/login');
         }
     }
@@ -31,7 +31,7 @@ class Dashboard extends Controller
     {
         if (adminIn()) {
             $this->view('dashboard/particuliers');
-        }else {
+        } else {
             $this->view('dashboard/login');
         }
     }
@@ -39,8 +39,36 @@ class Dashboard extends Controller
     {
         if (adminIn()) {
             $this->view('dashboard/agences');
-        }else {
+        } else {
             $this->view('dashboard/login');
         }
+    }
+    public function property($param='')
+    {
+        if (adminIn()) {
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Adminmodels.php';
+
+            $bienlist = new Biensmodels();
+            $admindetails = new Adminmodels();
+
+            if (!empty($param)) {
+                $this->view('dashboard/property', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'biens' => $bienlist->getpropsearch($param)]);
+            } else {
+                $this->view('dashboard/property', ['admin' => $admindetails->getAdmin($_SESSION['email']), 'biens' => $bienlist->getAllBiens()]);
+            }
+        }
+    }
+    public function graphs()
+    {
+        if (adminIn()) {
+            $this->view('dashboard/graphs');
+        } else {
+            $this->view('dashboard/login');
+        }
+    }
+    public function E404()
+    {
+        $this->view('pages/404');
     }
 }
