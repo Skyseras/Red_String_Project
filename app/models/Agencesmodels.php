@@ -1,5 +1,5 @@
 <?php
-class Particuliersmodels
+class Agencesmodels
 {
     private $db;
     public function __construct()
@@ -75,7 +75,7 @@ class Particuliersmodels
 
 
 
-    public function getParticulier($email)
+    public function getAgence($email)
     {
         $this->db->query('SELECT * FROM users WHERE email = :email');
 
@@ -87,13 +87,21 @@ class Particuliersmodels
         return $row;
     }
     
-    public function getAllParticuliers()
+    public function getAllAgences()
     {
-        $this->db->query('SELECT * FROM users WHERE role="particulier" order by id DESC');
+        $this->db->query('SELECT * FROM users WHERE role="agence" order by id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }
 
+    public function getAgencesfor()
+    {
+        $this->db->query('SELECT * FROM users WHERE role="agence" order by id DESC');
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+    
     public function getsearch($word)
     {
         $this->db->query("SELECT * FROM students WHERE name LIKE '%$word%' OR gender LIKE '%$word%' OR class LIKE '%$word%' OR parent LIKE '%$word%' OR address LIKE '%$word%' OR email LIKE '%$word%' OR birthday LIKE '%$word%' order by id DESC");

@@ -91,75 +91,13 @@
                     <i class="icon-diamond menu-icon"></i>
                 </a>
             </li>
-            <!-- <li class="nav-item nav-category">
-                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property">
-                    <span class="nav-link p-0" style="border-top: 0;">Listes Biens Immobiliers</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#grande-ville" aria-expanded="false" aria-controls="grande-ville">
-                    <span class="menu-title">Grande Ville</span>
-                    <i class="icon-directions menu-icon"></i>
-                </a>
-                <div class="collapse" id="grande-ville">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/casablanca">Casablanca</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/rabat">Rabat</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/marrakech">Marrakech</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/tanger">Tanger</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/agadir">Agadir</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/kenitra">Kenitra</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/fès">Fès</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/oujda">Oujda</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#type" aria-expanded="false" aria-controls="type">
-                    <span class="menu-title">Type</span>
-                    <i class="icon-key menu-icon"></i>
-                </a>
-                <div class="collapse" id="type">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Location</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Vente</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#sup" aria-expanded="false" aria-controls="sup">
-                    <span class="menu-title">Supérficies</span>
-                    <i class="icon-home menu-icon"></i>
-                </a>
-                <div class="collapse" id="sup">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">40 - 100 m²</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">100 - 500 m²</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">500 - 2000 m²</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#genre" aria-expanded="false" aria-controls="genre">
-                    <span class="menu-title">Genre</span>
-                    <i class="icon-tag menu-icon"></i>
-                </a>
-                <div class="collapse" id="genre">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Terrain</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Résidentiel</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Commercial</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Industriel</a></li>
-                    </ul>
-                </div>
-            </li> -->
             <li class="nav-item nav-category">
                 <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/clients">
                     <span class="nav-link p-0" style="border-top: 0;">Statistiques</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/graphs">
                     <span class="menu-title">Graphs</span>
                     <i class="icon-chart menu-icon"></i>
                 </a>

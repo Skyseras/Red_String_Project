@@ -5,6 +5,7 @@ require APPROOT . '/views/includes/head.php';
 <body class="scrollbar-hidden">
 	<?php
 	require APPROOT . '/views/includes/header.php';
+	var_dump($data['allpropandcity']);
 	?>
 	<section class="slider-hero">
 		<div class="overlay"></div>
@@ -270,91 +271,24 @@ require APPROOT . '/views/includes/head.php';
 					</div>
 				</div>
 				<div class="col-md-10">
-					<div class="row">
-						<div class="col-md-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
-							<ul class="places-list">
-								<li>
-									<a href="#">
-										Tanger
-										<span>200 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Kénitra
-										<span>100 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Rabat
-										<span>120 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Casablanca
-										<span>300 Properties</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-md-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-							<ul class="places-list">
-								<li>
-									<a href="#">
-										El Jadida
-										<span>100 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Youssoufia
-										<span>200 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Safi
-										<span>200 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Marrakech
-										<span>200 Properties</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-md-4" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
-							<ul class="places-list">
-								<li>
-									<a href="#">
-										Agadir
-										<span>422 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Essaouira
-										<span>200 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Oujda
-										<span>200 Properties</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Fès
-										<span>200 Properties</span>
-									</a>
-								</li>
-							</ul>
-						</div>
+					<div class="row text-center justify-content-center mt-4">
+						<?php
+						if (count($data['allpropandcity']) > 0) {
+							foreach ($data['allpropandcity'] as $row) {
+								echo '
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+								<ul class="places-list my-1">
+									<li>
+										<a href="#">
+										' . $row->city_name . '
+											<span>' . $row->prop_count . ' Properties</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							';
+							}
+						} ?>
 					</div>
 				</div>
 			</div>

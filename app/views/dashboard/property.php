@@ -44,9 +44,9 @@ require APPROOT . '/views/includes/dashhead.php';
                   <div class="collapse" id="genre">
                     <ul class="nav flex-column sub-menu">
                       <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Terrain">Terrain</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Résidentiel">Résidentiel</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Commercial">Commercial</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/Industriel">Industriel</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/sidentiel">Résidentiel</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/commercial">Commercial</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/property/industriel">Industriel</a></li>
                     </ul>
                   </div>
                 </div>
