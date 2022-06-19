@@ -83,6 +83,15 @@ class Biensmodels
     }
 
 
+    public function getBiensOf($user_id)
+    {
+        $this->db->query('SELECT * FROM property WHERE id=:id order by id DESC');
+        $this->db->bind(':id', $user_id);
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+
     public function getVedetteBiens()
     {
         $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC LIMIT 4');

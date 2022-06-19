@@ -18,17 +18,17 @@ require APPROOT . '/views/includes/head.php';
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="Nom">Nom</label>
-								<input name="lname" type="text" class="form-control" id="lname" value="<?php echo $data['clientinfo']['lname']?>">
+								<input name="lname" type="text" class="form-control" id="lname" value="<?php echo $data['clientinfo']['lname'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="Prénom">Prénom</label>
-								<input name="fname" type="text" class="form-control" id="fname" value="<?php echo $data['clientinfo']['fname']?>">
+								<input name="fname" type="text" class="form-control" id="fname" value="<?php echo $data['clientinfo']['fname'] ?>">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="Email">Email</label>
-								<input name="email" type="email" class="form-control" id="email" value="<?php echo $data['clientinfo']['email']?>">
+								<input name="email" type="email" class="form-control" id="email" value="<?php echo $data['clientinfo']['email'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="Password">Nouveau Password</label>
@@ -38,17 +38,17 @@ require APPROOT . '/views/includes/head.php';
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="Ville">Ville</label>
-								<input name="city" type="text" class="form-control" id="city" value="<?php echo $data['clientinfo']['city']?>">
+								<input name="city" type="text" class="form-control" id="city" value="<?php echo $data['clientinfo']['city'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="Numéro">Numéro de Téléphone</label>
-								<input name="phone" type="text" class="form-control" id="phone" value="<?php echo $data['clientinfo']['phone']?>">
+								<input name="phone" type="text" class="form-control" id="phone" value="<?php echo $data['clientinfo']['phone'] ?>">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="Adresse">Adresse</label>
-								<textarea name="address" class="form-control" id="address" rows="1" value="<?php echo $data['clientinfo']['address']?>"></textarea>
+								<textarea name="address" class="form-control" id="address" rows="1" value="<?php echo $data['clientinfo']['address'] ?>"></textarea>
 							</div>
 							<div class="form-group col-md-6">
 								<label class="form-label" for="photoDePprofil">Ajouter la photo de profil</label>
@@ -56,7 +56,7 @@ require APPROOT . '/views/includes/head.php';
 							</div>
 							<div class="form-group col-md-6" style="display: none;">
 								<label for="pdpold">pdpold</label>
-								<textarea name="pdpold" class="form-control" id="pdpold" rows="1" value="<?php echo $data['clientinfo']['pdp']?>"></textarea>
+								<textarea name="pdpold" class="form-control" id="pdpold" rows="1" value="<?php echo $data['clientinfo']['pdp'] ?>"></textarea>
 							</div>
 						</div>
 						<div class="row">
@@ -115,76 +115,41 @@ require APPROOT . '/views/includes/head.php';
 						</form>
 					</div>
 					<div class="row">
-						<div class="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-							<div class="property-wrap my-0">
-								<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-									<p class="price"><span class="orig-price">Dhs 300,000</span></p>
-								</a>
-								<div class="text">
-									<span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-									<ul class="property_list mt-1 mb-0">
-										<li><span class="flaticon-bed"></span>3</li>
-										<li><span class="flaticon-bathtub"></span>2</li>
-										<li><span class="flaticon-blueprint"></span>320 m²</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-							<div class="property-wrap my-0">
-								<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-									<p class="price"><span class="orig-price">Dhs 300,000</span></p>
-									<p class="price" style="top:20px; bottom:0; right:0px; left:170px;"><span class="orig-price icon-trash rounded-circle" style=" padding:6px 7px;"></span></p>
+						<?php
+						if (count($data['allbiens']) > 0) {
+							$i = 0;
+							foreach ($data['allbiens'] as $row) {
+								if (empty($row->pdb)) {
+									$pdbdefault = 'login.jpg';
+								} else {
+									$pdbdefault = $row->pdb;
+								}
+								if ($row->type == 'Vente') {
+									$typeClass = 'sale';
+								} else {
+									$typeClass = 'rent';
+								}
+								echo '
+								<div class="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+								<div class="property-wrap my-0">
+									<a href="#" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
+										<p class="price"><span class="orig-price">Dhs ' . $row->price . '</span></p>
+										<p class="price" style="top:20px; bottom:0; right:0px; left:170px;"><span class="orig-price icon-trash rounded-circle" style=" padding:6px 7px;"></span></p>
 									<p class="price" style="top:20px; bottom:0; left:210px; right:0px;"><span class="orig-price icon-pencil rounded-circle" style=" padding:6px 7px;"></span></p>
-								</a>
-								<div class="text">
-									<span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-									<ul class="property_list mt-1 mb-0">
-										<li><span class="flaticon-bed"></span>3</li>
-										<li><span class="flaticon-bathtub"></span>2</li>
-										<li><span class="flaticon-blueprint"></span>320 m²</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-							<div class="property-wrap my-0">
-								<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-									<p class="price"><span class="orig-price">Dhs 300,000</span></p>
-									<p class="price" style="top:20px; bottom:0; right:0px; left:170px;"><span class="orig-price icon-trash rounded-circle" style=" padding:6px 7px;"></span></p>
-									<p class="price" style="top:20px; bottom:0; left:210px; right:0px;"><span class="orig-price icon-pencil rounded-circle" style=" padding:6px 7px;"></span></p>
-								</a>
-								<div class="text">
-									<span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-									<ul class="property_list mt-1 mb-0">
-										<li><span class="flaticon-bed"></span>3</li>
-										<li><span class="flaticon-bathtub"></span>2</li>
-										<li><span class="flaticon-blueprint"></span>320 m²</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-							<div class="property-wrap my-0">
-								<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-									<p class="price"><span class="orig-price">Dhs 300,000</span></p>
-									<p class="price" style="top:20px; bottom:0; right:0px; left:170px;"><span class="orig-price icon-trash rounded-circle" style=" padding:6px 7px;"></span></p>
-									<p class="price" style="top:20px; bottom:0; left:210px; right:0px;"><span class="orig-price icon-pencil rounded-circle" style=" padding:6px 7px;"></span></p>
-								</a>
-								<div class="text">
-									<div class="list-team mb-2">
-										<span class="text-right">Il y a 2 semaines</span>
+									</a>
+									<div class="text">
+										<span class="location"><i class="ion-ios-pin"></i>' . $row->city . '<span class="' . $typeClass . '">' . $row->type . '</span></span>
+										<ul class="property_list mt-1 mb-0">
+											<li><span class="flaticon-bed"></span>' . $row->chamber . '</li>
+											<li><span class="flaticon-bathtub"></span>' . $row->bath . '</li>
+											<li><span class="flaticon-blueprint"></span>' . $row->Superficie . ' m²</li>
+										</ul>
 									</div>
-									<h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-									<span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-									<ul class="property_list mt-3 mb-0">
-										<li><span class="flaticon-bed"></span>3</li>
-										<li><span class="flaticon-bathtub"></span>2</li>
-										<li><span class="flaticon-blueprint"></span>320 m²</li>
-									</ul>
 								</div>
-							</div>
-						</div>
+							</div>';
+								$i++;
+							}
+						} ?>
 					</div>
 				</div>
 			</div>

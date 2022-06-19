@@ -3,9 +3,9 @@ require APPROOT . '/views/includes/head.php';
 ?>
 
 <body>
-	<?php
-	require APPROOT . '/views/includes/header.php';
-	?>
+  <?php
+  require APPROOT . '/views/includes/header.php';
+  ?>
   <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
     <div class="overlay"></div>
     <div class="container">
@@ -18,12 +18,12 @@ require APPROOT . '/views/includes/head.php';
     </div>
   </section>
   <section class="ftco-section bg-light">
-    <div class="container">
+    <div class="container" id="reserver">
       <div class="row no-gutters justify-content-center">
         <div class="col-md-12">
           <div class="wrapper">
             <div class="row g-0">
-              <div class="col-lg-6">
+              <div class="col-lg-7">
                 <div class="contact-wrap w-100 p-md-5 p-4">
                   <h3>Contactez-nous</h3>
                   <p class="mb-4">Nous sommes ouverts à toute suggestion ou simplement pour discuter</p>
@@ -38,7 +38,7 @@ require APPROOT . '/views/includes/head.php';
                     <div class="col-md-4">
                       <div class="dbox w-100 d-flex align-items-start">
                         <div class="text">
-                          <p><span>Email:</span> <a href="#"><span class="__cf_email__" data-cfemail="91f8fff7fed1e8fee4e3e2f8e5f4bff2fefc">[email&#160;protected]</span></a></p>
+                          <p><span>Email:</span> <a href="#"><span>Contact@immomaroc.ma</span></a></p>
                         </div>
                       </div>
                     </div>
@@ -54,7 +54,7 @@ require APPROOT . '/views/includes/head.php';
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Nom et Prénom">
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -64,17 +64,17 @@ require APPROOT . '/views/includes/head.php';
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subjet">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Create a message here"></textarea>
+                          <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Créer votre message ici"></textarea>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="submit" value="Send Message" class="btn btn-primary">
+                          <input type="submit" value="Envoyer Message" class="btn btn-primary">
                           <div class="submitting"></div>
                         </div>
                       </div>
@@ -90,7 +90,7 @@ require APPROOT . '/views/includes/head.php';
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 d-flex align-items-stretch">
+              <div class="col-lg-5 d-flex align-items-stretch">
                 <div id="map" class="bg-white"></div>
               </div>
             </div>
@@ -100,8 +100,8 @@ require APPROOT . '/views/includes/head.php';
     </div>
   </section>
   <?php
-    require APPROOT . '/views/includes/footer.php';
-    ?>
+  require APPROOT . '/views/includes/footer.php';
+  ?>
 </body>
 
 </html>

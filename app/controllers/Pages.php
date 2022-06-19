@@ -40,22 +40,17 @@ class Pages extends Controller
     public function profile()
     {
         if (isLoggedIn()) {
-            if ($_SESSION['role'] == 'client') {
-                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+            if ($_SESSION['role'] == 'client' || $_SESSION['role'] == 'particulier' || $_SESSION['role'] == 'agence') {
+                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+                $bienlist = new Biensmodels();
                 $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
+
+                $profil = $clientinfo->getClient($_SESSION['email']);
+
+
+                $this->view('pages/profile', ['allbiens' => $bienlist->getBiensOf($profil['user_id']),'clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
             }
-            if ($_SESSION['role'] == 'particulier') {
-                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
-                $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
-            }
-            if ($_SESSION['role'] == 'agence') {
-                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
-                $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
-            }
-        } else {
+            } else {
             $this->view('pages/login');
         }
     }
@@ -81,6 +76,12 @@ class Pages extends Controller
             $this->view('dashboard/login');
         }
     }
+
+    public function Propertydetails()
+    {
+        $this->view('pages/Propertydetails');
+    }
+
     public function E404()
     {
         $this->view('pages/404');
