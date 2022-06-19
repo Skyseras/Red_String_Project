@@ -55,4 +55,13 @@ class User {
             return false;
         }
     }
+
+
+    public function getagent()
+    {
+        $this->db->query('SELECT * FROM users WHERE role="agence" OR role="particulier" order by user_id DESC;');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
 }

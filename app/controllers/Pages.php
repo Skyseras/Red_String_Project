@@ -5,21 +5,7 @@ class Pages extends Controller
     {
         require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
         $bienlist = new Biensmodels();
-        // //array for city by property
-        // $citybyprop = $s->getbiensBycity();
-
-
-        // $city_names = '[';
-        // $city_prop_counts = '[';
-        // foreach ($citybyprop as $c) {
-        //     $city_names .= "'" . $c->city_name . "',";
-        //     $city_prop_counts .= "'" . $c->prop_count . "',";
-        // }
-        // $city_names .= ']';
-        // $city_prop_counts .= ']';
-
-
-        $this->view('pages/index', ['biens' => $bienlist->getAllBiens(), 'allpropandcity' => $bienlist->getbiensBycity()]);
+        $this->view('pages/index', ['allpropandcity' => $bienlist->getbiensBycity(), 'vedettebiens' => $bienlist->getVedetteBiens(), 'vedetteagent' => $bienlist->getVedetteagent()]);
     }
     public function about()
     {
@@ -27,11 +13,17 @@ class Pages extends Controller
     }
     public function properties()
     {
-        $this->view('pages/properties');
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+        $bienlist = new Biensmodels();
+        $this->view('pages/properties', ['allbiens' => $bienlist->getAllProp(), 'allagent' => $bienlist->getAllAgent()]);
     }
     public function agents()
     {
-        $this->view('pages/agents');
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/User.php';
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+        $agentlisting = new Biensmodels();
+        $agentlist = new User();
+        $this->view('pages/agents', [ 'agentlist' => $agentlist -> getagent(), 'agentlisting' => $agentlisting->getbiensByagent()]);
     }
     public function contact()
     {

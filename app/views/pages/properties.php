@@ -5,6 +5,7 @@ require APPROOT . '/views/includes/head.php';
 <body>
     <?php
     require APPROOT . '/views/includes/header.php';
+    $agent = $data['allagent'];
     ?>
     <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
         <div class="overlay"></div>
@@ -188,205 +189,47 @@ require APPROOT . '/views/includes/head.php';
     <section class="ftco-section bg-light">
         <div class="container-xl">
             <div class="row">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-                            <p class="price"><span class="orig-price">Dhs 300,000</span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 2 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>320 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-                            <p class="price"><span class="old-price">9,500</span><span class="orig-price">Dhs 3,050<small> / mois</small></span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 1 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Agadir <span class="rent">Location</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>510 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
-                            <p class="price"><span class="orig-price">Dhs 500,000</span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 2 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Kénitra <span class="sale">Vente</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>1,878 sqft</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-                            <p class="price"><span class="old-price">16,000</span><span class="orig-price">Dhs 5,200<small> / mois</small></span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 3 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Tanger <span class="rent">Location</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>760 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-                            <p class="price"><span class="orig-price">Dhs 300,000</span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 2 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>320 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-                            <p class="price"><span class="old-price">9,500</span><span class="orig-price">Dhs 3,050<small> / mois</small></span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 1 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Agadir <span class="rent">Location</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>510 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
-                            <p class="price"><span class="orig-price">Dhs 500,000</span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 2 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Kénitra <span class="sale">Vente</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>1,878 sqft</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="property-wrap">
-                        <a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-                            <p class="price"><span class="old-price">16,000</span><span class="orig-price">Dhs 5,200<small> / mois</small></span></p>
-                        </a>
-                        <div class="text">
-                            <div class="list-team d-flex align-items-center mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-                                    <h3 class="ml-2">John Dorf</h3>
-                                </div>
-                                <span class="text-right">Il y a 3 semaines</span>
-                            </div>
-                            <h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-                            <span class="location"><i class="ion-ios-pin"></i> Tanger <span class="rent">Location</span></span>
-                            <ul class="property_list mt-3 mb-0">
-                                <li><span class="flaticon-bed"></span>3</li>
-                                <li><span class="flaticon-bathtub"></span>2</li>
-                                <li><span class="flaticon-blueprint"></span>760 m²</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <?php
+                if (count($data['allbiens']) > 0) {
+                    $i = 0;
+                    foreach ($data['allbiens'] as $row) {
+                        if (empty($row->pdb)) {
+                            $pdbdefault = 'pdpdefault.jpg';
+                        } else {
+                            $pdbdefault = $row->pdb;
+                        }
+                        if ($row->type == 'Vente') {
+                            $typeClass = 'sale';
+                        } else {
+                            $typeClass = 'rent';
+                        }
+                        echo '
+					<div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+						<div class="property-wrap">
+							<a href="#" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
+								<p class="price"><span class="orig-price">Dhs ' . $row->price . '</span></p>
+							</a>
+							<div class="text">
+								<div class="list-team d-flex align-items-center mb-4">
+									<div class="d-flex align-items-center">
+										<div class="img" style="background-image:url(' . URLROOT . '/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+										<h3 class="ml-2">' . $agent[$i]['lname'] . ' ' . $agent[$i]['fname'] . '</h3>
+									</div>
+									<span class="text-right">Il y a 2 semaines</span>
+								</div>
+								<h3><a href="#">' . $row->description . '</a></h3>
+								<span class="location"><i class="ion-ios-pin"></i> ' . $row->city . ' <span class="' . $typeClass . '">' . $row->type . '</span></span>
+								<ul class="property_list mt-3 mb-0">
+									<li><span class="flaticon-bed"></span>' . $row->chamber . '</li>
+									<li><span class="flaticon-bathtub"></span>' . $row->bath . '</li>
+									<li><span class="flaticon-blueprint"></span>' . $row->Superficie . ' m²</li>
+								</ul>
+							</div>
+						</div>
+					</div>';
+                        $i++;
+                    }
+                } ?>
             </div>
         </div>
     </section>

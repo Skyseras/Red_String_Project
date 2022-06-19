@@ -5,7 +5,7 @@ require APPROOT . '/views/includes/head.php';
 <body class="scrollbar-hidden">
 	<?php
 	require APPROOT . '/views/includes/header.php';
-	// var_dump($data['allpropandcity']);
+	$agent = $data['vedetteagent'];
 	?>
 	<section class="slider-hero">
 		<div class="overlay"></div>
@@ -72,14 +72,14 @@ require APPROOT . '/views/includes/head.php';
 							<div class="col-md-12 tab-wrap">
 								<div class="tab-content" id="v-pills-tabContent">
 									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<form action="#" class="search-property-1">
+										<form action="<?= basename($_SERVER['REQUEST_URI']) == 'index'? URLROOT.'/pages/properties':'' ?>" method="GET" class="search-property-1">
 											<div class="row g-0">
 												<div class="col-md d-flex">
 													<div class="form-group p-4 border-0">
 														<label for="#">ENTREZ UN MOT-CLEF</label>
 														<div class="form-field">
 															<div class="icon"><span class="fa fa-search"></span></div>
-															<input type="text" class="form-control" placeholder="Enter Keyword">
+															<input type="text" value="<?= $_GET['searchword']??''?>" class="form-control" placeholder="Enter Keyword">
 														</div>
 													</div>
 												</div>
@@ -299,102 +299,51 @@ require APPROOT . '/views/includes/head.php';
 			<div class="row justify-content-center">
 				<div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
 					<span class="subheading">Nos biens immobiliers</span>
-					<h2 class="mb-4">Biens immobiliers en vedette</h2>
+					<h2 class="mb-4">Derniers Biens Publiés</h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-					<div class="property-wrap">
-						<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg)">
-							<p class="price"><span class="orig-price">Dhs 300,000</span></p>
-						</a>
-						<div class="text">
-							<div class="list-team d-flex align-items-center mb-4">
-								<div class="d-flex align-items-center">
-									<div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-									<h3 class="ml-2">John Dorf</h3>
+				<?php
+				if (count($data['vedettebiens']) > 0) {
+					$i=0;
+					foreach ($data['vedettebiens'] as $row) {
+						if (empty($row->pdb)) {
+							$pdbdefault = 'pdpdefault.jpg';
+						} else {
+							$pdbdefault = $row->pdb;
+						}
+						if ($row->type == 'Vente') {
+							$typeClass = 'sale';
+						} else {
+							$typeClass = 'rent';
+						}
+						echo '
+					<div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+						<div class="property-wrap">
+							<a href="#" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
+								<p class="price"><span class="orig-price">Dhs ' . $row->price . '</span></p>
+							</a>
+							<div class="text">
+								<div class="list-team d-flex align-items-center mb-4">
+									<div class="d-flex align-items-center">
+										<div class="img" style="background-image:url(' . URLROOT . '/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
+										<h3 class="ml-2">' . $agent[$i]['lname'] . ' ' . $agent[$i]['fname'] . '</h3>
+									</div>
+									<span class="text-right">Il y a 2 semaines</span>
 								</div>
-								<span class="text-right">Il y a 2 semaines</span>
+								<h3><a href="#">' . $row->description . '</a></h3>
+								<span class="location"><i class="ion-ios-pin"></i> ' . $row->city . ' <span class="' . $typeClass . '">' . $row->type . '</span></span>
+								<ul class="property_list mt-3 mb-0">
+									<li><span class="flaticon-bed"></span>' . $row->chamber . '</li>
+									<li><span class="flaticon-bathtub"></span>' . $row->bath . '</li>
+									<li><span class="flaticon-blueprint"></span>' . $row->Superficie . ' m²</li>
+								</ul>
 							</div>
-							<h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-							<span class="location"><i class="ion-ios-pin"></i> Marrakech <span class="sale">Vente</span></span>
-							<ul class="property_list mt-3 mb-0">
-								<li><span class="flaticon-bed"></span>3</li>
-								<li><span class="flaticon-bathtub"></span>2</li>
-								<li><span class="flaticon-blueprint"></span>320 m²</li>
-							</ul>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-					<div class="property-wrap">
-						<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-							<p class="price"><span class="old-price">9,500</span><span class="orig-price">Dhs 3,050<small> / mois</small></span></p>
-						</a>
-						<div class="text">
-							<div class="list-team d-flex align-items-center mb-4">
-								<div class="d-flex align-items-center">
-									<div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-									<h3 class="ml-2">John Dorf</h3>
-								</div>
-								<span class="text-right">Il y a 1 semaines</span>
-							</div>
-							<h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-							<span class="location"><i class="ion-ios-pin"></i> Agadir <span class="rent">Location</span></span>
-							<ul class="property_list mt-3 mb-0">
-								<li><span class="flaticon-bed"></span>3</li>
-								<li><span class="flaticon-bathtub"></span>2</li>
-								<li><span class="flaticon-blueprint"></span>510 m²</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-					<div class="property-wrap">
-						<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/xwork-3.jpg.pagespeed.ic.JZ2JnPe4EQ.jpg)">
-							<p class="price"><span class="orig-price">Dhs 500,000</span></p>
-						</a>
-						<div class="text">
-							<div class="list-team d-flex align-items-center mb-4">
-								<div class="d-flex align-items-center">
-									<div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-									<h3 class="ml-2">John Dorf</h3>
-								</div>
-								<span class="text-right">Il y a 2 semaines</span>
-							</div>
-							<h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-							<span class="location"><i class="ion-ios-pin"></i> Kénitra <span class="sale">Vente</span></span>
-							<ul class="property_list mt-3 mb-0">
-								<li><span class="flaticon-bed"></span>3</li>
-								<li><span class="flaticon-bathtub"></span>2</li>
-								<li><span class="flaticon-blueprint"></span>1,878 sqft</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-					<div class="property-wrap">
-						<a href="#" class="img img-property" style="background-image:url(<?php echo URLROOT; ?>/public/img/work-2.jpg)">
-							<p class="price"><span class="old-price">16,000</span><span class="orig-price">Dhs 5,200<small> / mois</small></span></p>
-						</a>
-						<div class="text">
-							<div class="list-team d-flex align-items-center mb-4">
-								<div class="d-flex align-items-center">
-									<div class="img" style="background-image:url(<?php echo URLROOT; ?>/public/img/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)"></div>
-									<h3 class="ml-2">John Dorf</h3>
-								</div>
-								<span class="text-right">Il y a 3 semaines</span>
-							</div>
-							<h3><a href="#">Propriété Loft Ensoleillé</a></h3>
-							<span class="location"><i class="ion-ios-pin"></i> Tanger <span class="rent">Location</span></span>
-							<ul class="property_list mt-3 mb-0">
-								<li><span class="flaticon-bed"></span>3</li>
-								<li><span class="flaticon-bathtub"></span>2</li>
-								<li><span class="flaticon-blueprint"></span>760 m²</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+					</div>';
+					$i++;
+					}
+				} ?>
 			</div>
 		</div>
 	</section>
