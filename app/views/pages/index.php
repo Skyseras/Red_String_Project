@@ -5,7 +5,7 @@ require APPROOT . '/views/includes/head.php';
 <body class="scrollbar-hidden">
 	<?php
 	require APPROOT . '/views/includes/header.php';
-	var_dump($data['allpropandcity']);
+	// var_dump($data['allpropandcity']);
 	?>
 	<section class="slider-hero">
 		<div class="overlay"></div>
