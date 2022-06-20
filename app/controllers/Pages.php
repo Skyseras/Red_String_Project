@@ -5,21 +5,7 @@ class Pages extends Controller
     {
         require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
         $bienlist = new Biensmodels();
-        // //array for city by property
-        // $citybyprop = $s->getbiensBycity();
-
-
-        // $city_names = '[';
-        // $city_prop_counts = '[';
-        // foreach ($citybyprop as $c) {
-        //     $city_names .= "'" . $c->city_name . "',";
-        //     $city_prop_counts .= "'" . $c->prop_count . "',";
-        // }
-        // $city_names .= ']';
-        // $city_prop_counts .= ']';
-
-
-        $this->view('pages/index', ['biens' => $bienlist->getAllBiens(), 'allpropandcity' => $bienlist->getbiensBycity()]);
+        $this->view('pages/index', ['allpropandcity' => $bienlist->getbiensBycity(), 'vedettebiens' => $bienlist->getVedetteBiens(), 'vedetteagent' => $bienlist->getVedetteagent()]);
     }
     public function about()
     {
@@ -27,15 +13,35 @@ class Pages extends Controller
     }
     public function properties()
     {
-        $this->view('pages/properties');
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+        $bienlist = new Biensmodels();
+        if (isset($_GET['typesearch'])) {
+            if (empty($_GET['prixsearch'])) {
+                $this->view('pages/properties', ['allbiens' => $bienlist->getAllPropSearch2($_GET['typesearch'], $_GET['motsearch'], $_GET['genresearch'], $_GET['villesearch']), 'allagent' => $bienlist->getAllAgent()]);
+            } else {
+                $this->view('pages/properties', ['allbiens' => $bienlist->getAllPropSearch($_GET['typesearch'], $_GET['motsearch'], $_GET['genresearch'], $_GET['villesearch'], $_GET['prixsearch']), 'allagent' => $bienlist->getAllAgent()]);
+            }
+        } else {
+            $this->view('pages/properties', ['allbiens' => $bienlist->getAllProp(), 'allagent' => $bienlist->getAllAgent()]);
+        }
     }
     public function agents()
     {
-        $this->view('pages/agents');
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/User.php';
+        require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+        $agentlisting = new Biensmodels();
+        $agentlist = new User();
+        $this->view('pages/agents', ['agentlist' => $agentlist->getagent(), 'agentlisting' => $agentlisting->getbiensByagent()]);
     }
     public function contact()
     {
-        $this->view('pages/contact');
+        if (isset($_GET['pr'])) {
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+            $bienlist = new Biensmodels();
+            $this->view('pages/contact', $bienlist->getBien($_GET['pr']));
+        } else {
+            $this->view('pages/contact');
+        }
     }
     public function login()
     {
@@ -48,20 +54,16 @@ class Pages extends Controller
     public function profile()
     {
         if (isLoggedIn()) {
-            if ($_SESSION['role'] == 'client') {
+            if ($_SESSION['role'] == 'client' || $_SESSION['role'] == 'particulier' || $_SESSION['role'] == 'agence') {
                 require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
+                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+                $bienlist = new Biensmodels();
                 $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
-            }
-            if ($_SESSION['role'] == 'particulier') {
-                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
-                $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
-            }
-            if ($_SESSION['role'] == 'agence') {
-                require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Clientsmodels.php';
-                $clientinfo = new Clientsmodels();
-                $this->view('pages/profile', ['clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
+
+                $profil = $clientinfo->getClient($_SESSION['email']);
+
+
+                $this->view('pages/profile', ['allbiens' => $bienlist->getBiensOf($profil['user_id']), 'clientinfo' => $clientinfo->getClient($_SESSION['email'])]);
             }
         } else {
             $this->view('pages/login');
@@ -89,6 +91,18 @@ class Pages extends Controller
             $this->view('dashboard/login');
         }
     }
+
+    public function Propertydetails()
+    {
+        if (isset($_GET['prop'])) {
+            require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
+            $bienlist = new Biensmodels();
+            $this->view('pages/Propertydetails', ['bien' => $bienlist->getBien($_GET['prop'])]);
+        } else {
+            header('location: ' . URLROOT . '/pages/index');
+        }
+    }
+
     public function E404()
     {
         $this->view('pages/404');

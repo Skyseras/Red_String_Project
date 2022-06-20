@@ -6,7 +6,7 @@ require APPROOT . '/views/includes/head.php';
     <?php
     require APPROOT . '/views/includes/headerthin.php';
     ?>
-    <section class="ftco-section img pb-3" style="background-color:#0d1832;">
+    <section class="ftco-section img pb-3 pt-3" style="background-color:#0d1832;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">

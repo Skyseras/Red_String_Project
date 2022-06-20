@@ -217,7 +217,7 @@ require APPROOT . '/views/includes/dashhead.php';
                                     if (count($data['particuliers']) > 0) {
                                         foreach ($data['particuliers'] as $row) {
                                             echo '<tr>
-                                            <td style="display: none;">' . $row->id . '</td>
+                                            <td style="display: none;">' . $row->user_id . '</td>
                                             <td class="py-1">
                                                 <p style="display: none;">' . $row->pdp . '</p>
                                                 <img src="' . URLROOT . '/public/img/' . $row->pdp . '" alt="image" />

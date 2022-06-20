@@ -13,6 +13,11 @@ require APPROOT . '/views/includes/dashhead.php';
                 <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L.png">
               </div>
               <h4>Authentification</h4>
+              <?php if(!empty($data)){ ?>
+                        <div class="alert alert-success mt-3 text-center">
+                            <?php echo $data['created']; ?>
+                        </div>
+                    <?php } ?>
               <form action="<?php echo URLROOT; ?>/Admincontroller/login" method="POST" class="pt-3">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>

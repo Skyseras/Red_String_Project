@@ -82,8 +82,88 @@ class Biensmodels
         return $this->db->resultSet();
     }
 
+
+
+    public function getBien($id)
+    {
+        $this->db->query('SELECT * FROM property WHERE id=:id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+
+
+    public function getBiensOf($user_id)
+    {
+        $this->db->query('SELECT * FROM property WHERE id=:id order by id DESC');
+        $this->db->bind(':id', $user_id);
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+
+    public function getVedetteBiens()
+    {
+        $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC LIMIT 4');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+    public function getVedetteagent()
+    {
+        $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC LIMIT 4');
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+
+
+    public function getAllProp()
+    {
+        $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC');
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+
+
+    public function getAllPropSearch($type, $mot, $genre, $ville, $prix)
+    {
+        $this->db->query("SELECT * FROM property WHERE type LIKE '%$type%' AND description LIKE '%$mot%' AND gender LIKE '%$genre%' AND city LIKE '%$ville%' AND price <= '$prix' order by id DESC;");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+    public function getAllPropSearch2($type, $mot, $genre, $ville)
+    {
+        $this->db->query("SELECT * FROM property WHERE type LIKE '%$type%' AND description LIKE '%$mot%' AND gender LIKE '%$genre%' AND city LIKE '%$ville%' order by id DESC;");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+
+
+
+
+    public function getAllAgent()
+    {
+        $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC');
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+
+
+
+
+
+
+
+
+
     public function getpropsearch($word)
-    {        
+    {
         $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();
@@ -115,6 +195,16 @@ class Biensmodels
         $this->db->execute();
         return $this->db->resultSet();
     }
+
+
+    public function getbiensByagent()
+    {
+        $this->db->query('SELECT count(*) AS property_count, user_id AS agent_name FROM property GROUP by user_id;');
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+
 
 
     public function getc()

@@ -13,7 +13,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/agents">AGENTS</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact">CONTACT</a></li>
             </ul>
-            <?php if (isset($_SESSION['user_id'])) : ?>
+            <?php if (isset($_SESSION['role'])) : ?>
                 <p class="mb-0"><a href="<?php echo URLROOT; ?>/usercontroller/logout" class="btn btn-primary rounded">Se déconnecter</a></p>
             <?php else : ?>
                 <p class="mb-0"><a href="<?php echo URLROOT; ?>/usercontroller/login" class="btn btn-primary rounded">Se connecter</a></p>

@@ -105,7 +105,7 @@
         </div>
     </div>
 </footer>
-<script src="<?php echo URLROOT; ?>/public/js/bootstrap.js"></script>
+<script script src="<?php echo URLROOT; ?>/public/js/bootstrap.js"></script>
 <script src="<?php echo URLROOT; ?>/public/js/tiny-slider.js"></script>
 <script src="<?php echo URLROOT; ?>/public/js/glightbox.js"></script>
 <script>

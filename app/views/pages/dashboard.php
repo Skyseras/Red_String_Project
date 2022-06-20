@@ -291,7 +291,7 @@ require APPROOT . '/views/includes/dashhead.php';
                 </div>
 
                 <div class="table-responsive border rounded p-1">
-                  <table class="table">
+                  <table class="table" id="tablepage">
                     <thead>
                       <tr>
                         <th class="font-weight-bold">Ville</th>
@@ -351,6 +351,10 @@ require APPROOT . '/views/includes/dashhead.php';
     </div>
   </div>
   <script>
+    $(document).ready(function() {
+      $('#tablepage').DataTable()
+      });
+
     document.querySelectorAll('.btn-edit').forEach(function(btn) {
       btn.addEventListener('click', function(com) {
         let item = com.target.parentElement.parentElement.parentElement;

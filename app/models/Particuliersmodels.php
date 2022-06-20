@@ -35,10 +35,10 @@ class Particuliersmodels
 
     public function edit($data)
     {
-        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:id");
+        $this->db->query("UPDATE users SET lname=:lname,fname=:fname,role=:role,email=:email,password=:password,pdp=:pdp,city=:city,phone=:phone,address=:address WHERE id =:user_id");
 
         //Bind values
-        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':user_id', $data['id']);
         $this->db->bind(':lname', $data['lname']);
         $this->db->bind(':fname', $data['fname']);
         $this->db->bind(':role', $data['role']);
@@ -60,9 +60,9 @@ class Particuliersmodels
 
     public function delete($data)
     {
-        $this->db->query('DELETE FROM users WHERE id=:id');
+        $this->db->query('DELETE FROM users WHERE id=:user_id');
 
-        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':user_id', $data['id']);
 
         //Execute function
         if ($this->db->execute()) {
@@ -89,7 +89,7 @@ class Particuliersmodels
     
     public function getAllParticuliers()
     {
-        $this->db->query('SELECT * FROM users WHERE role="particulier" order by id DESC');
+        $this->db->query('SELECT * FROM users WHERE role="particulier" order by user_id DESC');
         $this->db->execute();
         return $this->db->resultSet();
     }
