@@ -6,7 +6,6 @@ require APPROOT . '/views/includes/head.php';
     <?php
     require APPROOT . '/views/includes/header.php';
     $agent = $data['allagent'];
-    var_dump($_GET);
     ?>
     <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
         <div class="overlay"></div>
@@ -56,10 +55,11 @@ require APPROOT . '/views/includes/head.php';
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
                                                                 <select name="genresearch" id="" class="form-control">
+                                                                    <option selected value="">Genre de la propriété</option>
                                                                     <option value="sidentiel">Résidentiel</option>
-                                                                    <option value="Commercial">Commercial</option>
+                                                                    <option value="commercial">Commercial</option>
                                                                     <option value="Terrain">Terrain</option>
-                                                                    <option value="Industriel">Industriel</option>
+                                                                    <option value="industriel">Industriel</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -133,6 +133,7 @@ require APPROOT . '/views/includes/head.php';
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
                                                                 <select name="genresearch" id="" class="form-control">
+                                                                    <option selected value="">Genre de la propriété</option>
                                                                     <option value="">Résidentiel</option>
                                                                     <option value="">Commercial</option>
                                                                     <option value="">Terrain</option>
@@ -198,7 +199,7 @@ require APPROOT . '/views/includes/head.php';
                     $i = 0;
                     foreach ($data['allbiens'] as $row) {
                         if (empty($row->pdb)) {
-                            $pdbdefault = 'pdpdefault.jpg';
+                            $pdbdefault = 'login.jpg';
                         } else {
                             $pdbdefault = $row->pdb;
                         }
@@ -210,7 +211,7 @@ require APPROOT . '/views/includes/head.php';
                         echo '
 					<div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
 						<div class="property-wrap">
-							<a href="#" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
+							<a href="' . URLROOT . '/pages/propertydetails?prop=' . $row->id . '" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
 								<p class="price"><span class="orig-price">Dhs ' . $row->price . '</span></p>
 							</a>
 							<div class="text">
@@ -221,7 +222,7 @@ require APPROOT . '/views/includes/head.php';
 									</div>
 									<span class="text-right">Il y a 2 semaines</span>
 								</div>
-								<h3><a href="#">' . $row->description . '</a></h3>
+								<h3><a>' . $row->description . '</a></h3>
 								<span class="location"><i class="ion-ios-pin"></i> ' . $row->city . ' <span class="' . $typeClass . '">' . $row->type . '</span></span>
 								<ul class="property_list mt-3 mb-0">
 									<li><span class="flaticon-bed"></span>' . $row->chamber . '</li>
@@ -239,7 +240,7 @@ require APPROOT . '/views/includes/head.php';
                                   <img style="width:auto; height:auto; border-radius:0;" src="https://thumbs.gfycat.com/CreamyInfatuatedAnkolewatusi-size_restricted.gif" alt="">
                               <h2>C\'est pas grave, Vous pouvez changer le mot clef</h2>
                           </div>';
-                  } ?>
+                } ?>
             </div>
         </div>
     </section>

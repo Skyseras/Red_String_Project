@@ -6,6 +6,105 @@ require APPROOT . '/views/includes/head.php';
 	<?php
 	require APPROOT . '/views/includes/headerthin.php';
 	?>
+	<!-- Modal add-->
+	<div class="modal fade scrollbar-hidden" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addModaltitle">Ajouter Nouveau Bien</h5>
+				</div>
+				<div class="px-4 py-3" id="form">
+					<form action="<?php echo URLROOT; ?>/Bienscontroller/add" method="POST" enctype="multipart/form-data" class="forms-sample">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Ville">Ville</label>
+								<input name="city" type="text" class="form-control" id="city" placeholder="Ville">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Description">Description</label>
+								<input name="description" type="text" class="form-control" id="description" placeholder="Description">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Type">Type</label>
+								<select name="type" class="small-size form-control" id="type" placeholder="Choisir le type du bien">
+									<option selected value="">Choisir le type du bien</option>
+									<option value="Vente">Vente</option>
+									<option value="Location">Location</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Chambre">Nombre de Chambre</label>
+								<input type="number" id="chamber" class="form-control" name="chamber" min="1" max="20">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Ville">Nombre de salle de bains</label>
+								<input type="number" id="bath" class="form-control" name="bath" min="1" max="10">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Supérficie">Supérficie en m²</label>
+								<input name="Superficie" type="number" class="form-control" id="Superficie" min="10" max="1000000">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Genre" class="form-label">Genre du bien</label>
+								<select name="gender" class="small-size form-control" id="gender" placeholder="Select Gender">
+									<option selected value="">Choisir le genre du bien</option>
+									<option value="Terrain">Terrain</option>
+									<option value="Résidentiel">Résidentiel</option>
+									<option value="Commercial">Commercial</option>
+									<option value="Industriel">Industriel</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Prix">Prix en Dhs</label>
+								<input name="price" type="number" class="form-control" id="price" min="500" max="100000000000">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="Adresse">Adresse</label>
+								<input name="address" type="text" class="form-control" id="address" placeholder="Adresse du bien">
+							</div>
+							<div class="form-group col-md-6">
+								<label class="form-label" for="photoDuBien">Ajouter la photo du bien</label>
+								<input name="pdb" type="file" class="form-control" id="pdb" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<button type="submit" name="save" class="btn btn-primary mr-2">Submit</button>
+								<button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-light">Cancel</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal delete-->
+	<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content text-center">
+				<div class="modal-header justify-content-center">
+					<h5 class="modal-title text-danger" id="deleteModaltitle">Alerte! Suppression de la propriété</h5>
+				</div>
+				<div class="px-4 py-3">
+					Êtes-vous sûr de vouloir supprimer?<br>
+				</div>
+				<form action="<?php echo URLROOT; ?>/Bienscontroller/delete" method="POST">
+					<input type="text" name="id" class="id" style="display: none;">
+					<div class="px-4 py-3">
+						<button type="submit" name="save" class="btn btn-danger mr-2">Oui, supprimer cette propriété.</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- Modal edit -->
 	<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
 		<div class="modal-dialog">
@@ -108,7 +207,7 @@ require APPROOT . '/views/includes/head.php';
 						<h2 style="border-left: 4px solid #5ea51d;">&nbsp Biens immobiliers</h2>
 						<form class="form-inline my-2 my-lg-0">
 							<div>
-								<p class="mb-0 mr-2"><a href="#" class="btn btn-primary icon-plus"></a></p>
+								<p class="mb-0 mr-2"><a type="button" data-bs-toggle="modal" data-bs-target="#addModal"class="btn btn-primary icon-plus"></a></p>
 							</div>
 							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 							<button class="btn btn-outline-success" style="background-color: #5ea51d;" type="submit"><span class="icon-magnifier text-light"></span></button>

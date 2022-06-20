@@ -162,6 +162,8 @@ class Usercontroller extends Controller
 
     public function createUserSession($user)
     {
+        $_SESSION['lname'] = $user->lname;
+        $_SESSION['fname'] = $user->fname;
         $_SESSION['email'] = $user->email;
         $_SESSION['role'] = $user->role;
         header('location:' . URLROOT . '/pages/index');
@@ -169,6 +171,9 @@ class Usercontroller extends Controller
 
     public function logout()
     {
+        unset($_SESSION['lname']);
+        unset($_SESSION['email']);
+        unset($_SESSION['fname']);
         unset($_SESSION['role']);
         header('location:' . URLROOT . '/pages/index');
     }

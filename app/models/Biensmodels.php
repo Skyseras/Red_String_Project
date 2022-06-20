@@ -83,6 +83,17 @@ class Biensmodels
     }
 
 
+
+    public function getBien($id)
+    {
+        $this->db->query('SELECT * FROM property WHERE id=:id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+        return $this->db->resultSetassoc();
+    }
+
+
+
     public function getBiensOf($user_id)
     {
         $this->db->query('SELECT * FROM property WHERE id=:id order by id DESC');
@@ -124,7 +135,12 @@ class Biensmodels
         return $this->db->resultSet();
     }
 
-
+    public function getAllPropSearch2($type, $mot, $genre, $ville)
+    {
+        $this->db->query("SELECT * FROM property WHERE type LIKE '%$type%' AND description LIKE '%$mot%' AND gender LIKE '%$genre%' AND city LIKE '%$ville%' order by id DESC;");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
 
 
 

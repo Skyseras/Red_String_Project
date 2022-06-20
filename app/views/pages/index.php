@@ -323,7 +323,7 @@ require APPROOT . '/views/includes/head.php';
 						echo '
 					<div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
 						<div class="property-wrap">
-							<a href="#" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
+							<a href="' . URLROOT . '/pages/propertydetails?prop=' . $row->id . '" class="img img-property" style="background-image:url(' . URLROOT . '/public/img/' . $pdbdefault . ')">
 								<p class="price"><span class="orig-price">Dhs ' . $row->price . '</span></p>
 							</a>
 							<div class="text">
@@ -334,7 +334,7 @@ require APPROOT . '/views/includes/head.php';
 									</div>
 									<span class="text-right">Il y a 2 semaines</span>
 								</div>
-								<h3><a href="#">' . $row->description . '</a></h3>
+								<h3><a>' . $row->description . '</a></h3>
 								<span class="location"><i class="ion-ios-pin"></i> ' . $row->city . ' <span class="' . $typeClass . '">' . $row->type . '</span></span>
 								<ul class="property_list mt-3 mb-0">
 									<li><span class="flaticon-bed"></span>' . $row->chamber . '</li>

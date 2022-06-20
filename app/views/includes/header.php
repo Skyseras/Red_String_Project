@@ -48,7 +48,6 @@
             <?php else : ?>
                 <p class="mb-0"><a href="<?php echo URLROOT; ?>/usercontroller/login" class="btn btn-primary rounded">Se connecter</a></p>
             <?php endif; ?>
-            <p><?php if (isset($_SESSION['role'])) echo $_SESSION['role'] ?></p>
         </div>
     </div>
 </nav>
