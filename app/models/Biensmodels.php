@@ -115,6 +115,21 @@ class Biensmodels
         return $this->db->resultSet();
     }
 
+
+
+    public function getAllPropSearch($type, $mot, $genre, $ville, $prix)
+    {
+        $this->db->query("SELECT * FROM property WHERE type LIKE '%$type%' AND description LIKE '%$mot%' AND gender LIKE '%$genre%' AND city LIKE '%$ville%' AND price <= '$prix' order by id DESC;");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
+
+
+
+
+
+
     public function getAllAgent()
     {
         $this->db->query('SELECT * FROM users INNER JOIN property ON users.user_id=property.user_id order by id DESC');
@@ -129,10 +144,10 @@ class Biensmodels
 
 
 
-    
+
 
     public function getpropsearch($word)
-    {        
+    {
         $this->db->query("SELECT * FROM property WHERE city LIKE '%$word%' or type LIKE '%$word%' or gender LIKE '%$word%' order by id DESC;");
         $this->db->execute();
         return $this->db->resultSet();

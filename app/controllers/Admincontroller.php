@@ -37,7 +37,8 @@ class Admincontroller extends Controller
                 'emailError' => '',
                 'passwordError' => '',
                 'confirmPasswordError' => '',
-                'pdpError' => ''
+                'pdpError' => '',
+                'created' => 'Votre compte a été créé avec succès.'
             ];
 
 
@@ -63,12 +64,13 @@ class Admincontroller extends Controller
                         $data['pdpError'] = 'Format de l\'image non supporté.';
                     }
                 }
-            } else {
-                $data['pdpError'] = 'Veuillez choisir une image';
-            }
+            } 
+            // else {
+            //     $data['pdpError'] = 'Veuillez choisir une image';
+            // }
 
             $nameValidation = "/^[a-zA-Z0-9]*$/";
-            $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
+            $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i"; //ignore case and accents
 
             //Validate name on letters/numbers
             if (empty($data['name'])) {
@@ -117,7 +119,7 @@ class Admincontroller extends Controller
                 //Register admin from model function
                 if ($this->adminModel->register($data)) {
                     //Redirect to the login page
-                    $this->view('dashboard/login');
+                    $this->view('dashboard/login', $data);
                 } else {
                     die('Something went wrong.');
                 }

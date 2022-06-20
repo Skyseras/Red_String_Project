@@ -15,7 +15,11 @@ class Pages extends Controller
     {
         require $_SERVER['DOCUMENT_ROOT'] . '/red_string_project/app/models/Biensmodels.php';
         $bienlist = new Biensmodels();
-        $this->view('pages/properties', ['allbiens' => $bienlist->getAllProp(), 'allagent' => $bienlist->getAllAgent()]);
+        if(isset($_GET['typesearch'])){
+            $this->view('pages/properties', ['allbiens' => $bienlist->getAllPropSearch($_GET['typesearch'],$_GET['motsearch'],$_GET['genresearch'],$_GET['villesearch'],$_GET['prixsearch']), 'allagent' => $bienlist->getAllAgent()]);
+        }else{
+            $this->view('pages/properties', ['allbiens' => $bienlist->getAllProp(), 'allagent' => $bienlist->getAllAgent()]);
+        }
     }
     public function agents()
     {

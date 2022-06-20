@@ -6,6 +6,7 @@ require APPROOT . '/views/includes/head.php';
     <?php
     require APPROOT . '/views/includes/header.php';
     $agent = $data['allagent'];
+    var_dump($_GET);
     ?>
     <section class="hero-wrap hero-wrap-2" style="background-image:url(<?php echo URLROOT; ?>/public/img/xbg_4.jpg.pagespeed.ic.wYQ9Oeghhn.jpg)">
         <div class="overlay"></div>
@@ -33,28 +34,32 @@ require APPROOT . '/views/includes/head.php';
                             <div class="col-md-12 tab-wrap">
                                 <div class="tab-content" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-                                        <form action="#" class="search-property-1">
+                                        <form action="<?php echo URLROOT; ?>/pages/properties" class="search-property-1">
                                             <div class="row g-0">
+                                                <div class="form-group p-4 border-0" style="display: none;">
+                                                    <label for="type">type</label>
+                                                    <input name="typesearch" type="text" class="form-control" value="Vente">
+                                                </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4 border-0">
                                                         <label for="#">ENTREZ UN MOT-CLEF</label>
                                                         <div class="form-field">
                                                             <div class="icon"><span class="fa fa-search"></span></div>
-                                                            <input type="text" class="form-control" placeholder="Enter Keyword">
+                                                            <input name="motsearch" type="text" class="form-control" placeholder="Enter Keyword">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4">
-                                                        <label for="#">TYPE DE PROPRIÉTÉ</label>
+                                                        <label for="#">GENRE DE PROPRIÉTÉ</label>
                                                         <div class="form-field">
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                                <select name="" id="" class="form-control">
-                                                                    <option value="">Résidentiel</option>
-                                                                    <option value="">Commercial</option>
-                                                                    <option value="">Terrain</option>
-                                                                    <option value="">Industriel</option>
+                                                                <select name="genresearch" id="" class="form-control">
+                                                                    <option value="sidentiel">Résidentiel</option>
+                                                                    <option value="Commercial">Commercial</option>
+                                                                    <option value="Terrain">Terrain</option>
+                                                                    <option value="Industriel">Industriel</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -62,10 +67,10 @@ require APPROOT . '/views/includes/head.php';
                                                 </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4">
-                                                        <label for="#">EMPLACEMENT</label>
+                                                        <label for="#">VILLE</label>
                                                         <div class="form-field">
-                                                            <div class="icon"><span class="ion-ios-pin"></span></div>
-                                                            <input type="text" class="form-control" placeholder="Search Location">
+                                                            <div class="icon"><span class="icon-directions"></span></div>
+                                                            <input name="villesearch" type="text" class="form-control" placeholder="Search Location">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -75,21 +80,21 @@ require APPROOT . '/views/includes/head.php';
                                                         <div class="form-field">
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                                <select name="" id="" class="form-control">
-                                                                    <option value="">Dhs 10,000</option>
-                                                                    <option value="">Dhs 100,000</option>
-                                                                    <option value="">Dhs 500,000</option>
-                                                                    <option value="">Dhs 1,000,000</option>
-                                                                    <option value="">Dhs 2,000,000</option>
-                                                                    <option value="">Dhs 3,000,000</option>
-                                                                    <option value="">Dhs 4,000,000</option>
-                                                                    <option value="">Dhs 5,000,000</option>
-                                                                    <option value="">Dhs 6,000,000</option>
-                                                                    <option value="">Dhs 7,000,000</option>
-                                                                    <option value="">Dhs 8,000,000</option>
-                                                                    <option value="">Dhs 9,000,000</option>
-                                                                    <option value="">Dhs 10,000,000</option>
-                                                                    <option value="">Dhs 20,000,000</option>
+                                                                <select name="prixsearch" id="" class="form-control">
+                                                                    <option selected value="">Budget Limit</option>
+
+                                                                    <option value="100000">Dhs 100,000</option>
+                                                                    <option value="200000">Dhs 200,000</option>
+                                                                    <option value="300000">Dhs 300,000</option>
+                                                                    <option value="400000">Dhs 400,000</option>
+                                                                    <option value="500000">Dhs 500,000</option>
+                                                                    <option value="600000">Dhs 600,000</option>
+                                                                    <option value="700000">Dhs 700,000</option>
+                                                                    <option value="800000">Dhs 800,000</option>
+                                                                    <option value="900000">Dhs 900,000</option>
+                                                                    <option value="1000000">Dhs 1,000,000</option>
+                                                                    <option value="1500000">Dhs 1,500,000</option>
+                                                                    <option value="2000000">Dhs 2,000,000</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -98,7 +103,7 @@ require APPROOT . '/views/includes/head.php';
                                                 <div class="col-md d-flex">
                                                     <div class="form-group d-flex w-100 border-0">
                                                         <div class="form-field w-100 align-items-center d-flex">
-                                                            <input type="submit" value="Chercher" class="align-self-stretch form-control btn btn-primary">
+                                                            <input type="submit" value="Rechercher" class="align-self-stretch form-control btn btn-primary">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -106,24 +111,28 @@ require APPROOT . '/views/includes/head.php';
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-                                        <form action="#" class="search-property-1">
+                                        <form action="<?php echo URLROOT; ?>/pages/properties" class="search-property-1">
                                             <div class="row g-0">
+                                                <div class="form-group p-4 border-0" style="display: none;">
+                                                    <label for="type">type</label>
+                                                    <input name="typesearch" type="text" class="form-control" value="Location">
+                                                </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4 border-0">
                                                         <label for="#">ENTREZ UN MOT-CLEF</label>
                                                         <div class="form-field">
                                                             <div class="icon"><span class="fa fa-search"></span></div>
-                                                            <input type="text" class="form-control" placeholder="Enter Keyword">
+                                                            <input name="motsearch" type="text" class="form-control" placeholder="Enter Keyword">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4">
-                                                        <label for="#">TYPE DE PROPRIÉTÉ</label>
+                                                        <label for="#">GENRE DE PROPRIÉTÉ</label>
                                                         <div class="form-field">
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                                <select name="" id="" class="form-control">
+                                                                <select name="genresearch" id="" class="form-control">
                                                                     <option value="">Résidentiel</option>
                                                                     <option value="">Commercial</option>
                                                                     <option value="">Terrain</option>
@@ -135,10 +144,10 @@ require APPROOT . '/views/includes/head.php';
                                                 </div>
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4">
-                                                        <label for="#">EMPLACEMENT</label>
+                                                        <label for="#">VILLE</label>
                                                         <div class="form-field">
-                                                            <div class="icon"><span class="ion-ios-pin"></span></div>
-                                                            <input type="text" class="form-control" placeholder="Search Location">
+                                                            <div class="icon"><span class="icon-directions"></span></div>
+                                                            <input name="villesearch" type="text" class="form-control" placeholder="Search Location">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -148,21 +157,16 @@ require APPROOT . '/views/includes/head.php';
                                                         <div class="form-field">
                                                             <div class="select-wrap">
                                                                 <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                                <select name="" id="" class="form-control">
-                                                                    <option value="">Dhs 10,000</option>
-                                                                    <option value="">Dhs 100,000</option>
-                                                                    <option value="">Dhs 500,000</option>
-                                                                    <option value="">Dhs 1,000,000</option>
-                                                                    <option value="">Dhs 2,000,000</option>
-                                                                    <option value="">Dhs 3,000,000</option>
-                                                                    <option value="">Dhs 4,000,000</option>
-                                                                    <option value="">Dhs 5,000,000</option>
-                                                                    <option value="">Dhs 6,000,000</option>
-                                                                    <option value="">Dhs 7,000,000</option>
-                                                                    <option value="">Dhs 8,000,000</option>
-                                                                    <option value="">Dhs 9,000,000</option>
-                                                                    <option value="">Dhs 10,000,000</option>
-                                                                    <option value="">Dhs 20,000,000</option>
+                                                                <select name="prixsearch" id="" class="form-control">
+                                                                    <option selected value="">Budget Limit</option>
+
+                                                                    <option value="2000">Dhs 2,000</option>
+                                                                    <option value="5000">Dhs 5,000</option>
+                                                                    <option value="10000">Dhs 10,000</option>
+                                                                    <option value="20000">Dhs 20,000</option>
+                                                                    <option value="30000">Dhs 30,000</option>
+                                                                    <option value="40000">Dhs 40,000</option>
+                                                                    <option value="50000">Dhs 50,000</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -171,7 +175,7 @@ require APPROOT . '/views/includes/head.php';
                                                 <div class="col-md d-flex">
                                                     <div class="form-group d-flex w-100 border-0">
                                                         <div class="form-field w-100 align-items-center d-flex">
-                                                            <input type="submit" value="Chercher" class="align-self-stretch form-control btn btn-primary">
+                                                            <input type="submit" value="Rechercher" class="align-self-stretch form-control btn btn-primary">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -229,7 +233,13 @@ require APPROOT . '/views/includes/head.php';
 					</div>';
                         $i++;
                     }
-                } ?>
+                } else {
+                    echo '<div class="text-center" colspan="6">
+                              <h1>Pas de Résultas</h1>
+                                  <img style="width:auto; height:auto; border-radius:0;" src="https://thumbs.gfycat.com/CreamyInfatuatedAnkolewatusi-size_restricted.gif" alt="">
+                              <h2>C\'est pas grave, Vous pouvez changer le mot clef</h2>
+                          </div>';
+                  } ?>
             </div>
         </div>
     </section>

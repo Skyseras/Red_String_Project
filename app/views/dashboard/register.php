@@ -13,27 +13,38 @@ require APPROOT . '/views/includes/dashhead.php';
                 <img src="<?php echo URLROOT; ?>/public/img/Logo_IM_L.png">
               </div>
               <h4>Création de compte Administrateur</h4>
-              <form action="<?php echo URLROOT; ?>/Admincontroller/register" method="POST" enctype="multipart/form-data" class="pt-3">
+              <?php if(!empty($data)){ ?>
+                        <div class="alert alert-danger mt-3 text-center">
+                            <?php if(!empty($data['passwordError'])) echo $data['passwordError']; ?>
+                            <?php if(!empty($data['nameError'])) echo $data['nameError']; ?>
+                            <?php if(!empty($data['emailError'])) echo $data['emailError']; ?>
+                        </div>
+                    <?php } ?>
+              <form action="<?php echo URLROOT; ?>/Admincontroller/register" method="POST" enctype="multipart/form-data" class="pt-3" onsubmit="return validation()" novalidate>
                 <div class="row">
                   <div class="form-group col-6">
-                    <input type="text" class="form-control form-control-lg" name="name" placeholder="Nom" required>
+                    <input type="text" class="form-control form-control-lg" name="name" id="username" placeholder="Nom" >
+                    <span id="usererror" style="color:red;"></span>
                   </div>
                   <div class="form-group col-6">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="Email" >
+                    <span id="emailerror" style="color:red;"></span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-6">
-                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password" >
+                    <span id="passerror" style="color:red;"></span>
                   </div>
                   <div class="form-group col-6">
-                    <input type="password" class="form-control form-control-lg" name="confirmPassword" placeholder="Confimer Password" required>
+                    <input type="password" class="form-control form-control-lg" name="confirmPassword" id="cpassword" placeholder="Confimer Password" >
+                    <span id="cpasserror" style="color:red;"></span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label class="form-label" for="photoDeprofil">Ajouter votre photo de profil</label>
-                    <input name="pdp" type="file" class="form-control" id="pdp"/>
+                    <input name="pdp" type="file" class="form-control" id="pdp" />
                   </div>
                 </div>
                 <div class="mt-3">
@@ -48,6 +59,7 @@ require APPROOT . '/views/includes/dashhead.php';
       </div>
     </div>
   </div>
+  <script src="<?php echo URLROOT; ?>/js/validation.js"></script>
   <script src="<?php echo URLROOT; ?>/js/vendor.bundle.base.js"></script>
   <script src="<?php echo URLROOT; ?>/js/off-canvas.js"></script>
   <script src="<?php echo URLROOT; ?>/js/misc.js"></script>
